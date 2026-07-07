@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Toronto MULTIVENTURES Website</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="animate.min.css" rel="stylesheet">
+    <link href="owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="style.css" rel="stylesheet">
+    </head>
+
+    <body>
+<!-- Spinner Start -->
+<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<!-- Spinner End -->
+
+<!-- Topbar Start -->
+<div class="container-fluid px-5 d-none border-bottom d-lg-block" style="background-color: #0F172A;">
+    <div class="row gx-0 align-items-center">
+        <div class="col-lg-4 text-center text-lg-start mb-lg-0">
+            <div class="d-inline-flex align-items-center" style="height: 45px;">
+                <a href="about.html" class="text-white me-3"><small><i class="fas fa-info-circle me-1"></i> About</small></a>
+                <span class="text-white-50">|</span>
+                <a href="gallery.html" class="text-white mx-3"><small><i class="fas fa-images me-1"></i> Gallery</small></a>
+                <span class="text-white-50">|</span>
+                <a href="contact.html" class="text-white ms-3"><small><i class="fas fa-envelope me-1"></i> Contact</small></a>
+            </div>
+        </div>
+        <div class="col-lg-4 text-center d-flex align-items-center justify-content-center">
+            <small class="text-white-50 me-2"><i class="fas fa-phone-alt me-1"></i> Call Us:</small>
+            <a href="tel:+2347063785191" class="text-white fw-bold"><small>+234 706 378 5191</small></a>
+        </div>
+        <div class="col-lg-4 text-center text-lg-end">
+            <div class="d-inline-flex align-items-center" style="height: 45px;">
+                <a href="https://wa.me/2347063785191" target="_blank" class="text-white me-3"><small><i class="fab fa-whatsapp me-1"></i> WhatsApp</small></a>
+                <span class="text-white-50">|</span>
+                <a href="https://instagram.com" target="_blank" class="text-white mx-3"><small><i class="fab fa-instagram me-1"></i> Instagram</small></a>
+                <span class="text-white-50">|</span>
+                <a href="https://facebook.com" target="_blank" class="text-white ms-3"><small><i class="fab fa-facebook me-1"></i> Facebook</small></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid px-5 py-4 d-none d-lg-block" style="background-color: #FFFFFF;">
+    <div class="row gx-0 align-items-center text-center">
+        <div class="col-md-4 col-lg-3 text-center text-lg-start">
+            <div class="d-inline-flex align-items-center">
+                <a href="index.html" class="navbar-brand p-0">
+                    <h1 class="display-6 m-0" style="color: #0A5FB4;"><i class="fas fa-building me-2" style="color: #1D8A43;"></i>Toronto</h1>
+                    <small class="d-block text-muted" style="font-size: 0.75rem; letter-spacing: 2px; margin-top: -5px;">MULTIVENTURES CONCEPT</small>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4 col-lg-6 text-center">
+            <p class="text-muted mb-0" style="font-size: 0.95rem; letter-spacing: 1px;">
+                <em>One Company. Multiple Successful Businesses.</em>
+            </p>
+        </div>
+        <div class="col-md-4 col-lg-3 text-center text-lg-end">
+            <div class="d-inline-flex align-items-center">
+                <a href="https://wa.me/2347063785191" target="_blank" class="d-flex align-items-center justify-content-center" style="color: #25D366;">
+                    <span class="rounded-circle btn-md-square border" style="border-color: #25D366 !important;"><i class="fab fa-whatsapp"></i></span>
+                    <span class="text-dark ms-2 d-none d-xl-inline">Chat</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Topbar End -->
+
+<!-- Navbar Start -->
+<div class="container-fluid nav-bar p-0">
+    <div class="row gx-0 px-5 align-items-center" style="background-color: #0A5FB4;">
+        <div class="col-12">
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0A5FB4;">
+                <a href="index.html" class="navbar-brand d-block d-lg-none">
+                    <h1 class="display-6 m-0 text-white"><i class="fas fa-building me-2" style="color: #1D8A43;"></i>Toronto</h1>
+                </a>
+                <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars fa-1x text-white"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto py-0">
+                        <a href="index.html" class="nav-item nav-link active text-white fw-bold">Home</a>
+                        <a href="about.html" class="nav-item nav-link text-white">About</a>
+                        <a href="gallery.html" class="nav-item nav-link text-white">Gallery</a>
+                        <a href="contact.html" class="nav-item nav-link text-white me-2">Contact</a>
+                    </div>
+                    <a href="tel:+2347063785191" class="btn rounded-pill py-2 px-4 px-lg-3 mb-3 mb-md-3 mb-lg-0" style="background-color: #1D8A43; color: white; border: 0;"><i class="fab fa-whatsapp me-2"></i> +234 706 378 5191</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Navbar End -->
+
+<!-- Hero Carousel Start -->
+<div class="container-fluid carousel px-0" style="background-color: #0F172A;">
+    <div class="header-carousel owl-carousel">
+        
+        <!-- Slide 1: Toronto Technology (Flagship) -->
+        <div class="header-carousel-item position-relative" style="height: 600px;">
+            <img src="technology.png" class="img-fluid w-100 h-100" style="object-fit: cover; opacity: 0.4;" alt="Toronto Technology">
+            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: linear-gradient(90deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.6) 50%, rgba(15, 23, 42, 0.3) 100%);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.1s">
+                            <h4 class="text-uppercase fw-bold mb-3" style="letter-spacing: 4px; color: #0A5FB4;"><i class="fas fa-microchip me-2"></i> Flagship Business</h4>
+                            <h1 class="display-2 text-white fw-bold mb-3">Toronto Technology</h1>
+                            <p class="fs-4 text-white-50 mb-4">Serving Technology Better.</p>
+                            <p class="text-white-50 mb-4" style="max-width: 500px;">Smartphones, laptops, accessories and all your technology needs under one roof. Quality gadgets, trusted service.</p>
+                            <a href="technology.html" class="btn rounded-pill py-3 px-5 me-3" style="background-color: #0A5FB4; color: white;"><i class="fas fa-arrow-right me-2"></i> Explore Business</a>
+                            <a href="https://wa.me/2347063785191" target="_blank" class="btn rounded-pill py-3 px-5" style="background-color: #25D366; color: white;"><i class="fab fa-whatsapp me-2"></i> Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Toronto Kitchen -->
+        <div class="header-carousel-item position-relative" style="height: 600px;">
+            <img src="kitchen.png" class="img-fluid w-100 h-100" style="object-fit: cover; opacity: 0.4;" alt="Toronto Kitchen">
+            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: linear-gradient(90deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.6) 50%, rgba(15, 23, 42, 0.3) 100%);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.1s">
+                            <h4 class="text-uppercase fw-bold mb-3" style="letter-spacing: 4px; color: #0A5FB4;"><i class="fas fa-utensils me-2"></i> Food & Catering</h4>
+                            <h1 class="display-2 text-white fw-bold mb-3">Toronto Kitchen</h1>
+                            <p class="fs-4 text-white-50 mb-4">Taste it. Love it.</p>
+                            <p class="text-white-50 mb-4" style="max-width: 500px;">Delicious food and professional catering services. From daily meals to special events, we serve satisfaction.</p>
+                            <a href="kitchen.html" class="btn rounded-pill py-3 px-5 me-3" style="background-color: #0A5FB4; color: white;"><i class="fas fa-arrow-right me-2"></i> Explore Business</a>
+                            <a href="https://wa.me/2347063785191" target="_blank" class="btn rounded-pill py-3 px-5" style="background-color: #25D366; color: white;"><i class="fab fa-whatsapp me-2"></i> Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Toronto GameHub -->
+        <div class="header-carousel-item position-relative" style="height: 600px;">
+            <img src="gamehub1.png" class="img-fluid w-100 h-100" style="object-fit: cover; opacity: 0.4;" alt="Toronto GameHub">
+            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: linear-gradient(90deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.6) 50%, rgba(15, 23, 42, 0.3) 100%);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.1s">
+                            <h4 class="text-uppercase fw-bold mb-3" style="letter-spacing: 4px; color: #0A5FB4;"><i class="fas fa-gamepad me-2"></i> Gaming & Entertainment</h4>
+                            <h1 class="display-2 text-white fw-bold mb-3">Toronto GameHub</h1>
+                            <p class="fs-4 text-white-50 mb-4">Level Up Your Experience.</p>
+                            <p class="text-white-50 mb-4" style="max-width: 500px;">The ultimate gaming and entertainment destination. Consoles, accessories, and an immersive gaming environment.</p>
+                            <a href="gamehub.html" class="btn rounded-pill py-3 px-5 me-3" style="background-color: #0A5FB4; color: white;"><i class="fas fa-arrow-right me-2"></i> Explore Business</a>
+                            <a href="https://wa.me/2347063785191" target="_blank" class="btn rounded-pill py-3 px-5" style="background-color: #25D366; color: white;"><i class="fab fa-whatsapp me-2"></i> Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Toronto Unisex Classic Salon -->
+        <div class="header-carousel-item position-relative" style="height: 600px;">
+            <img src="salon.png" class="img-fluid w-100 h-100" style="object-fit: cover; opacity: 0.4;" alt="Toronto Unisex Classic Salon">
+            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: linear-gradient(90deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.6) 50%, rgba(15, 23, 42, 0.3) 100%);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.1s">
+                            <h4 class="text-uppercase fw-bold mb-3" style="letter-spacing: 4px; color: #0A5FB4;"><i class="fas fa-cut me-2"></i> Beauty & Grooming</h4>
+                            <h1 class="display-2 text-white fw-bold mb-3">Toronto Unisex Classic Salon</h1>
+                            <p class="fs-4 text-white-50 mb-4">Look Your Best.</p>
+                            <p class="text-white-50 mb-4" style="max-width: 500px;">Professional hairstyling, hair treatment, and beauty services. Walk in or book ahead — we make you shine.</p>
+                            <a href="salon.html" class="btn rounded-pill py-3 px-5 me-3" style="background-color: #0A5FB4; color: white;"><i class="fas fa-arrow-right me-2"></i> Explore Business</a>
+                            <a href="https://wa.me/2347063785191" target="_blank" class="btn rounded-pill py-3 px-5" style="background-color: #25D366; color: white;"><i class="fab fa-whatsapp me-2"></i> Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Toronto Fashion -->
+        <div class="header-carousel-item position-relative" style="height: 600px;">
+            <img src="fashion.png" class="img-fluid w-100 h-100" style="object-fit: cover; opacity: 0.4;" alt="Toronto Fashion">
+            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: linear-gradient(90deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.6) 50%, rgba(15, 23, 42, 0.3) 100%);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.1s">
+                            <h4 class="text-uppercase fw-bold mb-3" style="letter-spacing: 4px; color: #0A5FB4;"><i class="fas fa-tshirt me-2"></i> Style & Clothing</h4>
+                            <h1 class="display-2 text-white fw-bold mb-3">Toronto Fashion</h1>
+                            <p class="fs-4 text-white-50 mb-4">Dress to Impress.</p>
+                            <p class="text-white-50 mb-4" style="max-width: 500px;">Trendy clothing and fashion accessories for men and women. Quality styles that define your personality.</p>
+                            <a href="fashion.html" class="btn rounded-pill py-3 px-5 me-3" style="background-color: #0A5FB4; color: white;"><i class="fas fa-arrow-right me-2"></i> Explore Business</a>
+                            <a href="https://wa.me/2347063785191" target="_blank" class="btn rounded-pill py-3 px-5" style="background-color: #25D366; color: white;"><i class="fab fa-whatsapp me-2"></i> Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Hero Carousel End -->
+
+<!-- Why Choose Us Start -->
+<div class="container-fluid py-5" style="background-color: #FFFFFF;">
+    <div class="container py-5">
+        <div class="mx-auto text-center mb-5" style="max-width: 700px;">
+            <h4 class="border-bottom border-2 d-inline-block p-2 mb-3" style="color: #0A5FB4; border-color: #0A5FB4 !important;">Why Choose Us</h4>
+            <h1 class="display-5 mb-3" style="color: #0F172A;">Trusted Across All Our Businesses</h1>
+            <p class="text-muted">Toronto Multiventures Concept is built on a foundation of excellence, integrity, and customer satisfaction.</p>
+        </div>
+        <div class="row g-4">
+            
+            <!-- Trust 1: Genuine Quality -->
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="rounded p-4 h-100 text-center border" style="background-color: #F8FAFC;">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px; background-color: rgba(10, 95, 180, 0.1);">
+                        <i class="fas fa-shield-alt fa-2x" style="color: #0A5FB4;"></i>
+                    </div>
+                    <h4 class="mb-2" style="color: #0F172A;">Genuine Quality</h4>
+                    <p class="text-muted mb-0">Every product and service under Toronto Multiventures meets the highest standards of authenticity and excellence.</p>
+                </div>
+            </div>
+
+            <!-- Trust 2: Multiple Businesses -->
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="rounded p-4 h-100 text-center border" style="background-color: #F8FAFC;">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px; background-color: rgba(29, 138, 67, 0.1);">
+                        <i class="fas fa-building fa-2x" style="color: #1D8A43;"></i>
+                    </div>
+                    <h4 class="mb-2" style="color: #0F172A;">One Brand, Many Businesses</h4>
+                    <p class="text-muted mb-0">Technology, Kitchen, GameHub, Salon, and Fashion — all operating under one trusted corporate umbrella.</p>
+                </div>
+            </div>
+
+            <!-- Trust 3: Professional Service -->
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="rounded p-4 h-100 text-center border" style="background-color: #F8FAFC;">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px; background-color: rgba(10, 95, 180, 0.1);">
+                        <i class="fas fa-user-tie fa-2x" style="color: #0A5FB4;"></i>
+                    </div>
+                    <h4 class="mb-2" style="color: #0F172A;">Professional Service</h4>
+                    <p class="text-muted mb-0">Our team of experts across all divisions is trained to deliver outstanding customer experiences every time.</p>
+                </div>
+            </div>
+
+            <!-- Trust 4: Customer Support -->
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="rounded p-4 h-100 text-center border" style="background-color: #F8FAFC;">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px; background-color: rgba(29, 138, 67, 0.1);">
+                        <i class="fas fa-headset fa-2x" style="color: #1D8A43;"></i>
+                    </div>
+                    <h4 class="mb-2" style="color: #0F172A;">24/7 Support</h4>
+                    <p class="text-muted mb-0">Reach us anytime via phone, WhatsApp, or email. We are always ready to assist you.</p>
+                </div>
+            </div>
+
+            <!-- Trust 5: Affordable Excellence -->
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="rounded p-4 h-100 text-center border" style="background-color: #F8FAFC;">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px; background-color: rgba(10, 95, 180, 0.1);">
+                        <i class="fas fa-hand-holding-usd fa-2x" style="color: #0A5FB4;"></i>
+                    </div>
+                    <h4 class="mb-2" style="color: #0F172A;">Affordable Excellence</h4>
+                    <p class="text-muted mb-0">Premium quality at competitive prices across all our businesses. Value for your money, guaranteed.</p>
+                </div>
+            </div>
+
+            <!-- Trust 6: Growing With You -->
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
+                <div class="rounded p-4 h-100 text-center border" style="background-color: #F8FAFC;">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px; background-color: rgba(29, 138, 67, 0.1);">
+                        <i class="fas fa-chart-line fa-2x" style="color: #1D8A43;"></i>
+                    </div>
+                    <h4 class="mb-2" style="color: #0F172A;">Growing With You</h4>
+                    <p class="text-muted mb-0">We continuously expand and improve our services to meet your evolving needs and expectations.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Why Choose Us End -->
+
+<!-- Our Businesses Start -->
+<div class="container-fluid py-5" style="background-color: #F5F7FA;">
+    <div class="container py-5">
+        <div class="mx-auto text-center mb-5" style="max-width: 700px;">
+            <h4 class="border-bottom border-2 d-inline-block p-2 title-border-radius wow fadeInUp" data-wow-delay="0.1s" style="color: #0A5FB4; border-color: #0A5FB4 !important;">Our Businesses</h4>
+            <h1 class="mb-3 display-5 wow fadeInUp" data-wow-delay="0.2s" style="color: #0F172A;">Five Ventures, One Trusted Brand</h1>
+            <p class="text-muted wow fadeInUp" data-wow-delay="0.3s">Explore each of our businesses. Every division is dedicated to delivering excellence in its field.</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+            
+            <!-- Card 1: Toronto Technology (Flagship) -->
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                <a href="technology.html" class="text-decoration-none">
+                    <div class="rounded p-4 h-100 text-center border position-relative" style="background-color: #FFFFFF; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 10px 30px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+                        <span class="position-absolute top-0 end-0 mt-2 me-2 badge rounded-pill" style="background-color: #0A5FB4; font-size: 0.7rem;">Flagship</span>
+                        <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px; background-color: rgba(10, 95, 180, 0.1);">
+                            <i class="fas fa-microchip fa-2x" style="color: #0A5FB4;"></i>
+                        </div>
+                        <h4 class="mb-2" style="color: #0F172A;">Toronto Technology</h4>
+                        <p class="text-muted mb-3" style="font-size: 0.9rem;">Serving Technology Better. Smartphones, laptops, accessories & all your tech needs.</p>
+                        <span class="btn rounded-pill py-2 px-4" style="background-color: #0A5FB4; color: white; font-size: 0.85rem;"><i class="fas fa-arrow-right me-1"></i> Explore Business</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Card 2: Toronto Kitchen -->
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                <a href="kitchen.html" class="text-decoration-none">
+                    <div class="rounded p-4 h-100 text-center border" style="background-color: #FFFFFF; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 10px 30px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px; background-color: rgba(29, 138, 67, 0.1);">
+                            <i class="fas fa-utensils fa-2x" style="color: #1D8A43;"></i>
+                        </div>
+                        <h4 class="mb-2" style="color: #0F172A;">Toronto Kitchen</h4>
+                        <p class="text-muted mb-3" style="font-size: 0.9rem;">Taste it. Love it. Food and catering services for every occasion.</p>
+                        <span class="btn rounded-pill py-2 px-4" style="background-color: #1D8A43; color: white; font-size: 0.85rem;"><i class="fas fa-arrow-right me-1"></i> Explore Business</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Card 3: Toronto GameHub -->
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                <a href="gamehub.html" class="text-decoration-none">
+                    <div class="rounded p-4 h-100 text-center border" style="background-color: #FFFFFF; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 10px 30px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px; background-color: rgba(10, 95, 180, 0.1);">
+                            <i class="fas fa-gamepad fa-2x" style="color: #0A5FB4;"></i>
+                        </div>
+                        <h4 class="mb-2" style="color: #0F172A;">Toronto GameHub</h4>
+                        <p class="text-muted mb-3" style="font-size: 0.9rem;">Gaming and entertainment center. Consoles, accessories & immersive experiences.</p>
+                        <span class="btn rounded-pill py-2 px-4" style="background-color: #0A5FB4; color: white; font-size: 0.85rem;"><i class="fas fa-arrow-right me-1"></i> Explore Business</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Card 4: Toronto Unisex Classic Salon -->
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+                <a href="salon.html" class="text-decoration-none">
+                    <div class="rounded p-4 h-100 text-center border" style="background-color: #FFFFFF; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 10px 30px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px; background-color: rgba(29, 138, 67, 0.1);">
+                            <i class="fas fa-cut fa-2x" style="color: #1D8A43;"></i>
+                        </div>
+                        <h4 class="mb-2" style="color: #0F172A;">Toronto Unisex Classic Salon</h4>
+                        <p class="text-muted mb-3" style="font-size: 0.9rem;">Professional hairstyling, hair treatment, beauty services & grooming.</p>
+                        <span class="btn rounded-pill py-2 px-4" style="background-color: #1D8A43; color: white; font-size: 0.85rem;"><i class="fas fa-arrow-right me-1"></i> Explore Business</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Card 5: Toronto Fashion -->
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                <a href="fashion.html" class="text-decoration-none">
+                    <div class="rounded p-4 h-100 text-center border" style="background-color: #FFFFFF; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 10px 30px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px; background-color: rgba(10, 95, 180, 0.1);">
+                            <i class="fas fa-tshirt fa-2x" style="color: #0A5FB4;"></i>
+                        </div>
+                        <h4 class="mb-2" style="color: #0F172A;">Toronto Fashion</h4>
+                        <p class="text-muted mb-3" style="font-size: 0.9rem;">Fashion and clothing for men and women. Trendy styles, quality fabrics.</p>
+                        <span class="btn rounded-pill py-2 px-4" style="background-color: #0A5FB4; color: white; font-size: 0.85rem;"><i class="fas fa-arrow-right me-1"></i> Explore Business</span>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Our Businesses End -->
+
+
+<!-- About Us Start -->
+<div class="container-fluid py-5" style="background-color: #FFFFFF;">
+    <div class="container py-5">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                <div class="position-relative rounded overflow-hidden" style="height: 400px;">
+                    <img src="toronto.png" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Toronto Multiventures Concept">
+                    <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(transparent, rgba(15, 23, 42, 0.9));">
+                        <div class="d-flex align-items-center">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px; background-color: #0A5FB4;">
+                                <i class="fas fa-building text-white fa-lg"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-white mb-0">Toronto Multiventures</h5>
+                                <p class="text-white-50 mb-0" style="font-size: 0.85rem;">Concept — One Brand, Multiple Businesses</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+                <h4 class="border-bottom border-2 d-inline-block p-2 mb-3" style="color: #0A5FB4; border-color: #0A5FB4 !important;">About Us</h4>
+                <h1 class="display-5 mb-4" style="color: #0F172A;">One Company. Multiple Successful Businesses.</h1>
+                <p class="text-muted mb-4" style="line-height: 1.8;">
+                    <strong>Toronto Multiventures Concept</strong> is a multi-business corporate brand built on trust, quality, and excellence. We operate five distinct businesses under one umbrella — each dedicated to delivering outstanding value in its respective industry.
+                </p>
+                <p class="text-muted mb-4" style="line-height: 1.8;">
+                    From cutting-edge technology through <strong>Toronto Technology</strong>, to delightful culinary experiences at <strong>Toronto Kitchen</strong>, immersive gaming at <strong>Toronto GameHub</strong>, professional beauty services at <strong>Toronto Unisex Classic Salon</strong>, and trendy fashion at <strong>Toronto Fashion</strong> — we are committed to serving you better across every venture.
+                </p>
+                <div class="row g-4 mb-4">
+                    <div class="col-6">
+                        <div class="d-flex align-items-center">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 45px; height: 45px; background-color: rgba(10, 95, 180, 0.1);">
+                                <i class="fas fa-building text-primary" style="color: #0A5FB4;"></i>
+                            </div>
+                            <span class="fw-bold" style="color: #0F172A;">5 Active Businesses</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex align-items-center">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 45px; height: 45px; background-color: rgba(29, 138, 67, 0.1);">
+                                <i class="fas fa-users text-primary" style="color: #1D8A43;"></i>
+                            </div>
+                            <span class="fw-bold" style="color: #0F172A;">Trusted by Thousands</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex align-items-center">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 45px; height: 45px; background-color: rgba(10, 95, 180, 0.1);">
+                                <i class="fas fa-award text-primary" style="color: #0A5FB4;"></i>
+                            </div>
+                            <span class="fw-bold" style="color: #0F172A;">Quality Guaranteed</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex align-items-center">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 45px; height: 45px; background-color: rgba(29, 138, 67, 0.1);">
+                                <i class="fas fa-headset text-primary" style="color: #1D8A43;"></i>
+                            </div>
+                            <span class="fw-bold" style="color: #0F172A;">Always Here to Help</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="about.html" class="btn rounded-pill py-3 px-5 me-3" style="background-color: #0A5FB4; color: white;"><i class="fas fa-info-circle me-2"></i> Learn More About Us</a>
+                <a href="https://wa.me/2347063785191" target="_blank" class="btn rounded-pill py-3 px-5" style="background-color: #25D366; color: white;"><i class="fab fa-whatsapp me-2"></i> Chat With Us</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About Us End -->
+
+<!-- Gallery Preview Start -->
+<div class="container-fluid py-5" style="background-color: #F5F7FA;">
+    <div class="container py-5">
+        <div class="mx-auto text-center mb-5" style="max-width: 700px;">
+            <h4 class="border-bottom border-2 d-inline-block p-2 mb-3" style="color: #0A5FB4; border-color: #0A5FB4 !important;">Gallery</h4>
+            <h1 class="display-5 mb-3" style="color: #0F172A;">See What We Do</h1>
+            <p class="text-muted">A glimpse into our businesses — quality, style, and excellence across every venture.</p>
+        </div>
+        <div class="row g-4">
+            
+            <!-- Gallery Item 1: Toronto Technology -->
+            <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                <a href="technology.html" class="text-decoration-none">
+                    <div class="rounded position-relative overflow-hidden" style="height: 300px;">
+                        <img src="technology.png" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Toronto Technology">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end rounded p-4" style="background: linear-gradient(transparent 30%, rgba(15, 23, 42, 0.9) 100%);">
+                            <span class="badge rounded-pill mb-2 align-self-start" style="background-color: #0A5FB4; font-size: 0.8rem;"><i class="fas fa-microchip me-1"></i> Technology</span>
+                            <h3 class="text-white fw-bold mb-1">Toronto Technology</h3>
+                            <p class="text-white-50 mb-0">Smartphones, laptops & accessories</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Gallery Item 2: Toronto Kitchen -->
+            <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.2s">
+                <a href="kitchen.html" class="text-decoration-none">
+                    <div class="rounded position-relative overflow-hidden" style="height: 300px;">
+                        <img src="kitchen.png" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Toronto Kitchen">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end rounded p-4" style="background: linear-gradient(transparent 30%, rgba(15, 23, 42, 0.9) 100%);">
+                            <span class="badge rounded-pill mb-2 align-self-start" style="background-color: #1D8A43; font-size: 0.8rem;"><i class="fas fa-utensils me-1"></i> Kitchen</span>
+                            <h3 class="text-white fw-bold mb-1">Toronto Kitchen</h3>
+                            <p class="text-white-50 mb-0">Food & catering services</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Gallery Item 3: Toronto GameHub -->
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                <a href="gamehub.html" class="text-decoration-none">
+                    <div class="rounded position-relative overflow-hidden" style="height: 280px;">
+                        <img src="gamehub.png" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Toronto GameHub">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end rounded p-4" style="background: linear-gradient(transparent 30%, rgba(15, 23, 42, 0.9) 100%);">
+                            <span class="badge rounded-pill mb-2 align-self-start" style="background-color: #0A5FB4; font-size: 0.8rem;"><i class="fas fa-gamepad me-1"></i> GameHub</span>
+                            <h4 class="text-white fw-bold mb-1">Toronto GameHub</h4>
+                            <p class="text-white-50 mb-0">Gaming & entertainment</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Gallery Item 4: Toronto Unisex Classic Salon -->
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                <a href="salon.html" class="text-decoration-none">
+                    <div class="rounded position-relative overflow-hidden" style="height: 280px;">
+                        <img src="salon.png" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Toronto Unisex Classic Salon">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end rounded p-4" style="background: linear-gradient(transparent 30%, rgba(15, 23, 42, 0.9) 100%);">
+                            <span class="badge rounded-pill mb-2 align-self-start" style="background-color: #1D8A43; font-size: 0.8rem;"><i class="fas fa-cut me-1"></i> Salon</span>
+                            <h4 class="text-white fw-bold mb-1">Toronto Unisex Classic Salon</h4>
+                            <p class="text-white-50 mb-0">Hair & beauty services</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Gallery Item 5: Toronto Fashion -->
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                <a href="fashion.html" class="text-decoration-none">
+                    <div class="rounded position-relative overflow-hidden" style="height: 280px;">
+                        <img src="fashion.png" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Toronto Fashion">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end rounded p-4" style="background: linear-gradient(transparent 30%, rgba(15, 23, 42, 0.9) 100%);">
+                            <span class="badge rounded-pill mb-2 align-self-start" style="background-color: #0A5FB4; font-size: 0.8rem;"><i class="fas fa-tshirt me-1"></i> Fashion</span>
+                            <h4 class="text-white fw-bold mb-1">Toronto Fashion</h4>
+                            <p class="text-white-50 mb-0">Clothing & accessories</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+        <div class="text-center mt-5 wow fadeInUp" data-wow-delay="0.4s">
+            <a href="gallery.html" class="btn rounded-pill py-3 px-5" style="background-color: #0A5FB4; color: white;"><i class="fas fa-images me-2"></i> View Full Gallery</a>
+        </div>
+    </div>
+</div>
+<!-- Gallery Preview End -->
+
+
+<!-- Featured From Our Businesses Start -->
+<div class="container-fluid overflow-hidden" style="background-color: #FFFFFF;">
+    <div class="container py-5">
+        <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+            <h4 class="border-bottom border-2 d-inline-block p-2 title-border-radius wow fadeInUp" data-wow-delay="0.1s" style="color: #0A5FB4; border-color: #0A5FB4 !important;">Highlights</h4>
+            <h1 class="mb-0 display-5 wow fadeInUp" data-wow-delay="0.3s" style="color: #0F172A;">Featured From Our Businesses</h1>
+            <p class="text-muted mt-2 wow fadeInUp" data-wow-delay="0.4s">A curated showcase from across all Toronto Multiventures businesses</p>
+        </div>
+        <div class="productList-carousel owl-carousel pt-4 wow fadeInUp" data-wow-delay="0.3s">
+            
+            <!-- Carousel Group 1: Technology Focus -->
+            <div class="productImg-carousel owl-carousel productList-item">
+                
+                <!-- Item 1: Toronto Technology - Smartphone -->
+                <div class="productImg-item products-mini-item border rounded overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-5">
+                            <div class="products-mini-img border-end h-100 position-relative">
+                                <img src="smartphones.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Smartphones at Toronto Technology">
+                                <div class="products-mini-icon rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; background-color: #0A5FB4; position: absolute; top: 10px; right: 10px;">
+                                    <a href="technology.html"><i class="fa fa-eye fa-1x text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="products-mini-content p-3">
+                                <span class="d-block mb-1" style="font-size: 0.75rem; color: #0A5FB4;"><i class="fas fa-microchip me-1"></i> Toronto Technology</span>
+                                <a href="technology.html" class="d-block h5 text-decoration-none mb-2" style="color: #0F172A; font-size: 1rem;">Latest Smartphones</a>
+                                <p class="text-muted mb-0" style="font-size: 0.85rem;">New & UK used phones from top brands. Quality guaranteed.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products-mini-add border-top p-3 d-flex justify-content-between align-items-center">
+                        <a href="technology.html" class="btn rounded-pill py-2 px-3" style="background-color: #0A5FB4; color: white; font-size: 0.85rem;"><i class="fas fa-arrow-right me-1"></i> View More</a>
+                        <a href="https://wa.me/2347063785191?text=Hi,%20I'm%20interested%20in%20smartphones%20from%20Toronto%20Technology" target="_blank" class="text-decoration-none" style="color: #25D366; font-size: 0.85rem;"><i class="fab fa-whatsapp me-1"></i> Enquire</a>
+                    </div>
+                </div>
+
+                <!-- Item 2: Toronto Technology - Laptop -->
+                <div class="productImg-item products-mini-item border rounded overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-5">
+                            <div class="products-mini-img border-end h-100 position-relative">
+                                <img src="laptops.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Laptops at Toronto Technology">
+                                <div class="products-mini-icon rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; background-color: #0A5FB4; position: absolute; top: 10px; right: 10px;">
+                                    <a href="technology.html"><i class="fa fa-eye fa-1x text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="products-mini-content p-3">
+                                <span class="d-block mb-1" style="font-size: 0.75rem; color: #0A5FB4;"><i class="fas fa-microchip me-1"></i> Toronto Technology</span>
+                                <a href="technology.html" class="d-block h5 text-decoration-none mb-2" style="color: #0F172A; font-size: 1rem;">Laptops & Gadgets</a>
+                                <p class="text-muted mb-0" style="font-size: 0.85rem;">MacBook, HP, Dell, Lenovo & accessories for work and play.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products-mini-add border-top p-3 d-flex justify-content-between align-items-center">
+                        <a href="technology.html" class="btn rounded-pill py-2 px-3" style="background-color: #0A5FB4; color: white; font-size: 0.85rem;"><i class="fas fa-arrow-right me-1"></i> View More</a>
+                        <a href="https://wa.me/2347063785191?text=Hi,%20I'm%20interested%20in%20laptops%20from%20Toronto%20Technology" target="_blank" class="text-decoration-none" style="color: #25D366; font-size: 0.85rem;"><i class="fab fa-whatsapp me-1"></i> Enquire</a>
+                    </div>
+                </div>
+
+                <!-- Item 3: Toronto Technology - Accessories -->
+                <div class="productImg-item products-mini-item border rounded overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-5">
+                            <div class="products-mini-img border-end h-100 position-relative">
+                                <img src="tech-accessories.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Tech Accessories at Toronto Technology">
+                                <div class="products-mini-icon rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; background-color: #0A5FB4; position: absolute; top: 10px; right: 10px;">
+                                    <a href="technology.html"><i class="fa fa-eye fa-1x text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="products-mini-content p-3">
+                                <span class="d-block mb-1" style="font-size: 0.75rem; color: #0A5FB4;"><i class="fas fa-microchip me-1"></i> Toronto Technology</span>
+                                <a href="technology.html" class="d-block h5 text-decoration-none mb-2" style="color: #0F172A; font-size: 1rem;">Tech Accessories</a>
+                                <p class="text-muted mb-0" style="font-size: 0.85rem;">Chargers, cases, headphones, smartwatches & more.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products-mini-add border-top p-3 d-flex justify-content-between align-items-center">
+                        <a href="technology.html" class="btn rounded-pill py-2 px-3" style="background-color: #0A5FB4; color: white; font-size: 0.85rem;"><i class="fas fa-arrow-right me-1"></i> View More</a>
+                        <a href="https://wa.me/2347063785191?text=Hi,%20I'm%20interested%20in%20tech%20accessories%20from%20Toronto%20Technology" target="_blank" class="text-decoration-none" style="color: #25D366; font-size: 0.85rem;"><i class="fab fa-whatsapp me-1"></i> Enquire</a>
+                    </div>
+                </div>
+
+                <!-- Item 4: Toronto Kitchen -->
+                <div class="productImg-item products-mini-item border rounded overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-5">
+                            <div class="products-mini-img border-end h-100 position-relative">
+                                <img src="kitchen2.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Food at Toronto Kitchen">
+                                <div class="products-mini-icon rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; background-color: #1D8A43; position: absolute; top: 10px; right: 10px;">
+                                    <a href="kitchen.html"><i class="fa fa-eye fa-1x text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="products-mini-content p-3">
+                                <span class="d-block mb-1" style="font-size: 0.75rem; color: #1D8A43;"><i class="fas fa-utensils me-1"></i> Toronto Kitchen</span>
+                                <a href="kitchen.html" class="d-block h5 text-decoration-none mb-2" style="color: #0F172A; font-size: 1rem;">Delicious Meals</a>
+                                <p class="text-muted mb-0" style="font-size: 0.85rem;">Taste it. Love it. Quality food and catering for every occasion.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products-mini-add border-top p-3 d-flex justify-content-between align-items-center">
+                        <a href="kitchen.html" class="btn rounded-pill py-2 px-3" style="background-color: #1D8A43; color: white; font-size: 0.85rem;"><i class="fas fa-arrow-right me-1"></i> View More</a>
+                        <a href="https://wa.me/2347063785191?text=Hi,%20I'm%20interested%20in%20Toronto%20Kitchen%20services" target="_blank" class="text-decoration-none" style="color: #25D366; font-size: 0.85rem;"><i class="fab fa-whatsapp me-1"></i> Enquire</a>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Carousel Group 2: GameHub & Fashion -->
+            <div class="productImg-carousel owl-carousel productList-item">
+                
+                <!-- Item 5: Toronto GameHub - Consoles -->
+                <div class="productImg-item products-mini-item border rounded overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-5">
+                            <div class="products-mini-img border-end h-100 position-relative">
+                                <img src="gaming-consoles.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Gaming Consoles at Toronto GameHub">
+                                <div class="products-mini-icon rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; background-color: #0A5FB4; position: absolute; top: 10px; right: 10px;">
+                                    <a href="gamehub.html"><i class="fa fa-eye fa-1x text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="products-mini-content p-3">
+                                <span class="d-block mb-1" style="font-size: 0.75rem; color: #0A5FB4;"><i class="fas fa-gamepad me-1"></i> Toronto GameHub</span>
+                                <a href="gamehub.html" class="d-block h5 text-decoration-none mb-2" style="color: #0F172A; font-size: 1rem;">Gaming Consoles</a>
+                                <p class="text-muted mb-0" style="font-size: 0.85rem;">PlayStation, Xbox & the latest gaming systems for every gamer.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products-mini-add border-top p-3 d-flex justify-content-between align-items-center">
+                        <a href="gamehub.html" class="btn rounded-pill py-2 px-3" style="background-color: #0A5FB4; color: white; font-size: 0.85rem;"><i class="fas fa-arrow-right me-1"></i> View More</a>
+                        <a href="https://wa.me/2347063785191?text=Hi,%20I'm%20interested%20in%20gaming%20consoles%20from%20Toronto%20GameHub" target="_blank" class="text-decoration-none" style="color: #25D366; font-size: 0.85rem;"><i class="fab fa-whatsapp me-1"></i> Enquire</a>
+                    </div>
+                </div>
+
+                <!-- Item 6: Toronto GameHub - Accessories -->
+                <div class="productImg-item products-mini-item border rounded overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-5">
+                            <div class="products-mini-img border-end h-100 position-relative">
+                                <img src="accessories2.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Gaming Accessories at Toronto GameHub">
+                                <div class="products-mini-icon rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; background-color: #0A5FB4; position: absolute; top: 10px; right: 10px;">
+                                    <a href="gamehub.html"><i class="fa fa-eye fa-1x text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="products-mini-content p-3">
+                                <span class="d-block mb-1" style="font-size: 0.75rem; color: #0A5FB4;"><i class="fas fa-gamepad me-1"></i> Toronto GameHub</span>
+                                <a href="gamehub.html" class="d-block h5 text-decoration-none mb-2" style="color: #0F172A; font-size: 1rem;">Controllers & Accessories</a>
+                                <p class="text-muted mb-0" style="font-size: 0.85rem;">Wireless controllers, headsets, charging docks & gaming gear.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products-mini-add border-top p-3 d-flex justify-content-between align-items-center">
+                        <a href="gamehub.html" class="btn rounded-pill py-2 px-3" style="background-color: #0A5FB4; color: white; font-size: 0.85rem;"><i class="fas fa-arrow-right me-1"></i> View More</a>
+                        <a href="https://wa.me/2347063785191?text=Hi,%20I'm%20interested%20in%20gaming%20accessories%20from%20Toronto%20GameHub" target="_blank" class="text-decoration-none" style="color: #25D366; font-size: 0.85rem;"><i class="fab fa-whatsapp me-1"></i> Enquire</a>
+                    </div>
+                </div>
+
+                <!-- Item 7: Toronto Fashion - Men's Collection -->
+                <div class="productImg-item products-mini-item border rounded overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-5">
+                            <div class="products-mini-img border-end h-100 position-relative">
+                                <img src="men.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Men's Fashion at Toronto Fashion">
+                                <div class="products-mini-icon rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; background-color: #1D8A43; position: absolute; top: 10px; right: 10px;">
+                                    <a href="fashion.html"><i class="fa fa-eye fa-1x text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="products-mini-content p-3">
+                                <span class="d-block mb-1" style="font-size: 0.75rem; color: #1D8A43;"><i class="fas fa-tshirt me-1"></i> Toronto Fashion</span>
+                                <a href="fashion.html" class="d-block h5 text-decoration-none mb-2" style="color: #0F172A; font-size: 1rem;">Men's Collection</a>
+                                <p class="text-muted mb-0" style="font-size: 0.85rem;">Shirts, trousers, shoes & accessories for the modern gentleman.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products-mini-add border-top p-3 d-flex justify-content-between align-items-center">
+                        <a href="fashion.html" class="btn rounded-pill py-2 px-3" style="background-color: #1D8A43; color: white; font-size: 0.85rem;"><i class="fas fa-arrow-right me-1"></i> View More</a>
+                        <a href="https://wa.me/2347063785191?text=Hi,%20I'm%20interested%20in%20men's%20fashion%20from%20Toronto%20Fashion" target="_blank" class="text-decoration-none" style="color: #25D366; font-size: 0.85rem;"><i class="fab fa-whatsapp me-1"></i> Enquire</a>
+                    </div>
+                </div>
+
+                <!-- Item 8: Toronto Fashion - Women's Collection -->
+                <div class="productImg-item products-mini-item border rounded overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-5">
+                            <div class="products-mini-img border-end h-100 position-relative">
+                                <img src="trendy-accesories.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Women's Fashion at Toronto Fashion">
+                                <div class="products-mini-icon rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; background-color: #1D8A43; position: absolute; top: 10px; right: 10px;">
+                                    <a href="fashion.html"><i class="fa fa-eye fa-1x text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="products-mini-content p-3">
+                                <span class="d-block mb-1" style="font-size: 0.75rem; color: #1D8A43;"><i class="fas fa-tshirt me-1"></i> Toronto Fashion</span>
+                                <a href="fashion.html" class="d-block h5 text-decoration-none mb-2" style="color: #0F172A; font-size: 1rem;">Women's Collection</a>
+                                <p class="text-muted mb-0" style="font-size: 0.85rem;">Dresses, handbags, shoes & trendy accessories for every style.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products-mini-add border-top p-3 d-flex justify-content-between align-items-center">
+                        <a href="fashion.html" class="btn rounded-pill py-2 px-3" style="background-color: #1D8A43; color: white; font-size: 0.85rem;"><i class="fas fa-arrow-right me-1"></i> View More</a>
+                        <a href="https://wa.me/2347063785191?text=Hi,%20I'm%20interested%20in%20women's%20fashion%20from%20Toronto%20Fashion" target="_blank" class="text-decoration-none" style="color: #25D366; font-size: 0.85rem;"><i class="fab fa-whatsapp me-1"></i> Enquire</a>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Carousel Group 3: Salon & Mixed -->
+            <div class="productImg-carousel owl-carousel productList-item">
+                
+                <!-- Item 9: Toronto Unisex Classic Salon - Hair Styling -->
+                <div class="productImg-item products-mini-item border rounded overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-5">
+                            <div class="products-mini-img border-end h-100 position-relative">
+                                <img src="styling.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Hair Styling at Toronto Unisex Classic Salon">
+                                <div class="products-mini-icon rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; background-color: #1D8A43; position: absolute; top: 10px; right: 10px;">
+                                    <a href="salon.html"><i class="fa fa-eye fa-1x text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="products-mini-content p-3">
+                                <span class="d-block mb-1" style="font-size: 0.75rem; color: #1D8A43;"><i class="fas fa-cut me-1"></i> Toronto Unisex Classic Salon</span>
+                                <a href="salon.html" class="d-block h5 text-decoration-none mb-2" style="color: #0F172A; font-size: 1rem;">Professional Hair Styling</a>
+                                <p class="text-muted mb-0" style="font-size: 0.85rem;">Haircuts, braiding, treatment & styling for men and women.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products-mini-add border-top p-3 d-flex justify-content-between align-items-center">
+                        <a href="salon.html" class="btn rounded-pill py-2 px-3" style="background-color: #1D8A43; color: white; font-size: 0.85rem;"><i class="fas fa-arrow-right me-1"></i> View More</a>
+                        <a href="https://wa.me/2347063785191?text=Hi,%20I'm%20interested%20in%20hair%20styling%20at%20Toronto%20Unisex%20Classic%20Salon" target="_blank" class="text-decoration-none" style="color: #25D366; font-size: 0.85rem;"><i class="fab fa-whatsapp me-1"></i> Enquire</a>
+                    </div>
+                </div>
+
+                <!-- Item 10: Toronto Unisex Classic Salon - Beauty Services -->
+                <div class="productImg-item products-mini-item border rounded overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-5">
+                            <div class="products-mini-img border-end h-100 position-relative">
+                                <img src="beauty-grooming.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Beauty Services at Toronto Unisex Classic Salon">
+                                <div class="products-mini-icon rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; background-color: #1D8A43; position: absolute; top: 10px; right: 10px;">
+                                    <a href="salon.html"><i class="fa fa-eye fa-1x text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="products-mini-content p-3">
+                                <span class="d-block mb-1" style="font-size: 0.75rem; color: #1D8A43;"><i class="fas fa-cut me-1"></i> Toronto Unisex Classic Salon</span>
+                                <a href="salon.html" class="d-block h5 text-decoration-none mb-2" style="color: #0F172A; font-size: 1rem;">Beauty & Grooming</a>
+                                <p class="text-muted mb-0" style="font-size: 0.85rem;">Makeup, skincare, facials & complete beauty treatments.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products-mini-add border-top p-3 d-flex justify-content-between align-items-center">
+                        <a href="salon.html" class="btn rounded-pill py-2 px-3" style="background-color: #1D8A43; color: white; font-size: 0.85rem;"><i class="fas fa-arrow-right me-1"></i> View More</a>
+                        <a href="https://wa.me/2347063785191?text=Hi,%20I'm%20interested%20in%20beauty%20services%20at%20Toronto%20Unisex%20Classic%20Salon" target="_blank" class="text-decoration-none" style="color: #25D366; font-size: 0.85rem;"><i class="fab fa-whatsapp me-1"></i> Enquire</a>
+                    </div>
+                </div>
+
+                <!-- Item 11: Toronto Kitchen - Catering -->
+                <div class="productImg-item products-mini-item border rounded overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-5">
+                            <div class="products-mini-img border-end h-100 position-relative">
+                                <img src="event-catering.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Catering at Toronto Kitchen">
+                                <div class="products-mini-icon rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; background-color: #0A5FB4; position: absolute; top: 10px; right: 10px;">
+                                    <a href="kitchen.html"><i class="fa fa-eye fa-1x text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="products-mini-content p-3">
+                                <span class="d-block mb-1" style="font-size: 0.75rem; color: #0A5FB4;"><i class="fas fa-utensils me-1"></i> Toronto Kitchen</span>
+                                <a href="kitchen.html" class="d-block h5 text-decoration-none mb-2" style="color: #0F172A; font-size: 1rem;">Event Catering</a>
+                                <p class="text-muted mb-0" style="font-size: 0.85rem;">Professional catering for weddings, parties & corporate events.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products-mini-add border-top p-3 d-flex justify-content-between align-items-center">
+                        <a href="kitchen.html" class="btn rounded-pill py-2 px-3" style="background-color: #0A5FB4; color: white; font-size: 0.85rem;"><i class="fas fa-arrow-right me-1"></i> View More</a>
+                        <a href="https://wa.me/2347063785191?text=Hi,%20I'm%20interested%20in%20catering%20from%20Toronto%20Kitchen" target="_blank" class="text-decoration-none" style="color: #25D366; font-size: 0.85rem;"><i class="fab fa-whatsapp me-1"></i> Enquire</a>
+                    </div>
+                </div>
+
+                <!-- Item 12: Toronto Technology - Smart Devices -->
+                <div class="productImg-item products-mini-item border rounded overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-5">
+                            <div class="products-mini-img border-end h-100 position-relative">
+                                <img src="smart-devices.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Smart Devices at Toronto Technology">
+                                <div class="products-mini-icon rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; background-color: #0A5FB4; position: absolute; top: 10px; right: 10px;">
+                                    <a href="technology.html"><i class="fa fa-eye fa-1x text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="products-mini-content p-3">
+                                <span class="d-block mb-1" style="font-size: 0.75rem; color: #0A5FB4;"><i class="fas fa-microchip me-1"></i> Toronto Technology</span>
+                                <a href="technology.html" class="d-block h5 text-decoration-none mb-2" style="color: #0F172A; font-size: 1rem;">Smart Devices</a>
+                                <p class="text-muted mb-0" style="font-size: 0.85rem;">Smartwatches, earbuds, power banks & modern tech essentials.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products-mini-add border-top p-3 d-flex justify-content-between align-items-center">
+                        <a href="technology.html" class="btn rounded-pill py-2 px-3" style="background-color: #0A5FB4; color: white; font-size: 0.85rem;"><i class="fas fa-arrow-right me-1"></i> View More</a>
+                        <a href="https://wa.me/2347063785191?text=Hi,%20I'm%20interested%20in%20smart%20devices%20from%20Toronto%20Technology" target="_blank" class="text-decoration-none" style="color: #25D366; font-size: 0.85rem;"><i class="fab fa-whatsapp me-1"></i> Enquire</a>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Carousel Group 4: Final Mixed -->
+            <div class="productImg-carousel owl-carousel productList-item">
+                
+                <!-- Item 13: Toronto Fashion - Accessories -->
+                <div class="productImg-item products-mini-item border rounded overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-5">
+                            <div class="products-mini-img border-end h-100 position-relative">
+                                <img src="accessories3.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Fashion Accessories at Toronto Fashion">
+                                <div class="products-mini-icon rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; background-color: #1D8A43; position: absolute; top: 10px; right: 10px;">
+                                    <a href="fashion.html"><i class="fa fa-eye fa-1x text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="products-mini-content p-3">
+                                <span class="d-block mb-1" style="font-size: 0.75rem; color: #1D8A43;"><i class="fas fa-tshirt me-1"></i> Toronto Fashion</span>
+                                <a href="fashion.html" class="d-block h5 text-decoration-none mb-2" style="color: #0F172A; font-size: 1rem;">Trendy Accessories</a>
+                                <p class="text-muted mb-0" style="font-size: 0.85rem;">Watches, sunglasses, jewelry & belts to complete your look.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products-mini-add border-top p-3 d-flex justify-content-between align-items-center">
+                        <a href="fashion.html" class="btn rounded-pill py-2 px-3" style="background-color: #1D8A43; color: white; font-size: 0.85rem;"><i class="fas fa-arrow-right me-1"></i> View More</a>
+                        <a href="https://wa.me/2347063785191?text=Hi,%20I'm%20interested%20in%20fashion%20accessories%20from%20Toronto%20Fashion" target="_blank" class="text-decoration-none" style="color: #25D366; font-size: 0.85rem;"><i class="fab fa-whatsapp me-1"></i> Enquire</a>
+                    </div>
+                </div>
+
+                <!-- Item 14: Toronto GameHub - Gaming Environment -->
+                <div class="productImg-item products-mini-item border rounded overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-5">
+                            <div class="products-mini-img border-end h-100 position-relative">
+                                <img src="gaming-experience.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Gaming Experience at Toronto GameHub">
+                                <div class="products-mini-icon rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; background-color: #0A5FB4; position: absolute; top: 10px; right: 10px;">
+                                    <a href="gamehub.html"><i class="fa fa-eye fa-1x text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="products-mini-content p-3">
+                                <span class="d-block mb-1" style="font-size: 0.75rem; color: #0A5FB4;"><i class="fas fa-gamepad me-1"></i> Toronto GameHub</span>
+                                <a href="gamehub.html" class="d-block h5 text-decoration-none mb-2" style="color: #0F172A; font-size: 1rem;">Gaming Experience</a>
+                                <p class="text-muted mb-0" style="font-size: 0.85rem;">Immersive gaming sessions, tournaments & entertainment events.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products-mini-add border-top p-3 d-flex justify-content-between align-items-center">
+                        <a href="gamehub.html" class="btn rounded-pill py-2 px-3" style="background-color: #0A5FB4; color: white; font-size: 0.85rem;"><i class="fas fa-arrow-right me-1"></i> View More</a>
+                        <a href="https://wa.me/2347063785191?text=Hi,%20I'm%20interested%20in%20gaming%20at%20Toronto%20GameHub" target="_blank" class="text-decoration-none" style="color: #25D366; font-size: 0.85rem;"><i class="fab fa-whatsapp me-1"></i> Enquire</a>
+                    </div>
+                </div>
+
+                <!-- Item 15: Toronto Kitchen - Special Dishes -->
+                <div class="productImg-item products-mini-item border rounded overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-5">
+                            <div class="products-mini-img border-end h-100 position-relative">
+                                <img src="signature-dishes.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Special Dishes at Toronto Kitchen">
+                                <div class="products-mini-icon rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; background-color: #1D8A43; position: absolute; top: 10px; right: 10px;">
+                                    <a href="kitchen.html"><i class="fa fa-eye fa-1x text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="products-mini-content p-3">
+                                <span class="d-block mb-1" style="font-size: 0.75rem; color: #1D8A43;"><i class="fas fa-utensils me-1"></i> Toronto Kitchen</span>
+                                <a href="kitchen.html" class="d-block h5 text-decoration-none mb-2" style="color: #0F172A; font-size: 1rem;">Signature Dishes</a>
+                                <p class="text-muted mb-0" style="font-size: 0.85rem;">Our chef's special recipes crafted with passion & premium ingredients.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products-mini-add border-top p-3 d-flex justify-content-between align-items-center">
+                        <a href="kitchen.html" class="btn rounded-pill py-2 px-3" style="background-color: #1D8A43; color: white; font-size: 0.85rem;"><i class="fas fa-arrow-right me-1"></i> View More</a>
+                        <a href="https://wa.me/2347063785191?text=Hi,%20I'm%20interested%20in%20Toronto%20Kitchen%20dishes" target="_blank" class="text-decoration-none" style="color: #25D366; font-size: 0.85rem;"><i class="fab fa-whatsapp me-1"></i> Enquire</a>
+                    </div>
+                </div>
+
+                <!-- Item 16: Toronto Technology - Flagship Store -->
+                <div class="productImg-item products-mini-item border rounded overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-5">
+                            <div class="products-mini-img border-end h-100 position-relative">
+                                <img src="toronto.png" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Toronto Technology Flagship">
+                                <div class="position-absolute top-0 start-0 m-2">
+                                    <span class="badge" style="background-color: #0A5FB4;">Flagship</span>
+                                </div>
+                                <div class="products-mini-icon rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; background-color: #0A5FB4; position: absolute; top: 10px; right: 10px;">
+                                    <a href="technology.html"><i class="fa fa-eye fa-1x text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="products-mini-content p-3">
+                                <span class="d-block mb-1" style="font-size: 0.75rem; color: #0A5FB4;"><i class="fas fa-microchip me-1"></i> Toronto Technology</span>
+                                <a href="technology.html" class="d-block h5 text-decoration-none mb-2" style="color: #0F172A; font-size: 1rem;">Visit Our Store</a>
+                                <p class="text-muted mb-0" style="font-size: 0.85rem;">Serving technology better. Explore our full range of products & services.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products-mini-add border-top p-3 d-flex justify-content-between align-items-center">
+                        <a href="technology.html" class="btn rounded-pill py-2 px-3" style="background-color: #0A5FB4; color: white; font-size: 0.85rem;"><i class="fas fa-arrow-right me-1"></i> View More</a>
+                        <a href="https://wa.me/2347063785191?text=Hi,%20I'm%20interested%20in%20visiting%20Toronto%20Technology" target="_blank" class="text-decoration-none" style="color: #25D366; font-size: 0.85rem;"><i class="fab fa-whatsapp me-1"></i> Enquire</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Featured From Our Businesses End -->
+
+<!-- Popular From Our Businesses Start -->
+<div class="container-fluid pb-5" style="background-color: #F5F7FA;">
+    <div class="container py-5">
+        <div class="mx-auto text-center mb-5" style="max-width: 700px;">
+            <h4 class="mb-3 border-bottom border-2 d-inline-block p-2 title-border-radius wow fadeInUp" data-wow-delay="0.1s" style="color: #0A5FB4; border-color: #0A5FB4 !important;">Most Loved</h4>
+            <h1 class="mb-3 display-5 wow fadeInUp" data-wow-delay="0.2s" style="color: #0F172A;">Customer Favorites</h1>
+            <p class="mb-0 wow fadeInUp text-muted" data-wow-delay="0.3s">These are the most requested across our businesses — enquire today!</p>
+        </div>
+        <div class="row g-4">
+            
+            <!-- Item 1: Toronto Technology - Phones -->
+            <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="products-mini-item border rounded overflow-hidden" style="background-color: #FFFFFF;">
+                    <div class="row g-0">
+                        <div class="col-5">
+                            <div class="products-mini-img border-end h-100 position-relative">
+                                <img src="premium-smartphones.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Phones at Toronto Technology">
+                                <div class="position-absolute top-0 start-0 m-2">
+                                    <span class="badge" style="background-color: #0A5FB4;"><i class="fas fa-fire me-1"></i> Hot</span>
+                                </div>
+                                <div class="products-mini-icon rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; background-color: #0A5FB4; position: absolute; top: 10px; right: 10px;">
+                                    <a href="technology.html"><i class="fa fa-eye fa-1x text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="products-mini-content p-3">
+                                <span class="d-block mb-1" style="font-size: 0.75rem; color: #0A5FB4;"><i class="fas fa-microchip me-1"></i> Toronto Technology</span>
+                                <a href="technology.html" class="d-block h5 text-decoration-none mb-2" style="color: #0F172A; font-size: 1rem;">Premium Smartphones</a>
+                                <p class="text-muted mb-0" style="font-size: 0.85rem;">Latest models from Apple, Samsung & more. New & UK used available.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products-mini-add border-top p-3 d-flex justify-content-between align-items-center">
+                        <a href="technology.html" class="btn rounded-pill py-2 px-3" style="background-color: #0A5FB4; color: white; font-size: 0.85rem;"><i class="fas fa-arrow-right me-1"></i> View More</a>
+                        <a href="https://wa.me/2347063785191?text=Hi,%20I'm%20interested%20in%20premium%20smartphones%20from%20Toronto%20Technology" target="_blank" class="text-decoration-none" style="color: #25D366; font-size: 0.85rem;"><i class="fab fa-whatsapp me-1"></i> Enquire</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2: Toronto GameHub - Gaming Setup -->
+            <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="products-mini-item border rounded overflow-hidden" style="background-color: #FFFFFF;">
+                    <div class="row g-0">
+                        <div class="col-5">
+                            <div class="products-mini-img border-end h-100 position-relative">
+                                <img src="complete-gaming-setup.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Gaming Setup at Toronto GameHub">
+                                <div class="position-absolute top-0 start-0 m-2">
+                                    <span class="badge" style="background-color: #1D8A43;"><i class="fas fa-star me-1"></i> Best Seller</span>
+                                </div>
+                                <div class="products-mini-icon rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; background-color: #0A5FB4; position: absolute; top: 10px; right: 10px;">
+                                    <a href="gamehub.html"><i class="fa fa-eye fa-1x text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="products-mini-content p-3">
+                                <span class="d-block mb-1" style="font-size: 0.75rem; color: #0A5FB4;"><i class="fas fa-gamepad me-1"></i> Toronto GameHub</span>
+                                <a href="gamehub.html" class="d-block h5 text-decoration-none mb-2" style="color: #0F172A; font-size: 1rem;">Complete Gaming Setup</a>
+                                <p class="text-muted mb-0" style="font-size: 0.85rem;">Console, controllers, headset & accessories bundle for the ultimate experience.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products-mini-add border-top p-3 d-flex justify-content-between align-items-center">
+                        <a href="gamehub.html" class="btn rounded-pill py-2 px-3" style="background-color: #0A5FB4; color: white; font-size: 0.85rem;"><i class="fas fa-arrow-right me-1"></i> View More</a>
+                        <a href="https://wa.me/2347063785191?text=Hi,%20I'm%20interested%20in%20a%20gaming%20setup%20from%20Toronto%20GameHub" target="_blank" class="text-decoration-none" style="color: #25D366; font-size: 0.85rem;"><i class="fab fa-whatsapp me-1"></i> Enquire</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Item 3: Toronto Unisex Classic Salon - Hair Services -->
+            <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="products-mini-item border rounded overflow-hidden" style="background-color: #FFFFFF;">
+                    <div class="row g-0">
+                        <div class="col-5">
+                            <div class="products-mini-img border-end h-100 position-relative">
+                                <img src="full-hair-treatment.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Hair Services at Toronto Unisex Classic Salon">
+                                <div class="position-absolute top-0 start-0 m-2">
+                                    <span class="badge" style="background-color: #1D8A43;"><i class="fas fa-heart me-1"></i> Top Rated</span>
+                                </div>
+                                <div class="products-mini-icon rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; background-color: #1D8A43; position: absolute; top: 10px; right: 10px;">
+                                    <a href="salon.html"><i class="fa fa-eye fa-1x text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="products-mini-content p-3">
+                                <span class="d-block mb-1" style="font-size: 0.75rem; color: #1D8A43;"><i class="fas fa-cut me-1"></i> Toronto Unisex Classic Salon</span>
+                                <a href="salon.html" class="d-block h5 text-decoration-none mb-2" style="color: #0F172A; font-size: 1rem;">Full Hair Treatment</a>
+                                <p class="text-muted mb-0" style="font-size: 0.85rem;">Wash, treatment, styling & finishing — the complete care package.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products-mini-add border-top p-3 d-flex justify-content-between align-items-center">
+                        <a href="salon.html" class="btn rounded-pill py-2 px-3" style="background-color: #1D8A43; color: white; font-size: 0.85rem;"><i class="fas fa-arrow-right me-1"></i> View More</a>
+                        <a href="https://wa.me/2347063785191?text=Hi,%20I'm%20interested%20in%20hair%20treatment%20at%20Toronto%20Unisex%20Classic%20Salon" target="_blank" class="text-decoration-none" style="color: #25D366; font-size: 0.85rem;"><i class="fab fa-whatsapp me-1"></i> Enquire</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 4: Toronto Technology - Laptops -->
+            <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="products-mini-item border rounded overflow-hidden" style="background-color: #FFFFFF;">
+                    <div class="row g-0">
+                        <div class="col-5">
+                            <div class="products-mini-img border-end h-100 position-relative">
+                                <img src="professional-laptops.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Laptops at Toronto Technology">
+                                <div class="products-mini-icon rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; background-color: #0A5FB4; position: absolute; top: 10px; right: 10px;">
+                                    <a href="technology.html"><i class="fa fa-eye fa-1x text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="products-mini-content p-3">
+                                <span class="d-block mb-1" style="font-size: 0.75rem; color: #0A5FB4;"><i class="fas fa-microchip me-1"></i> Toronto Technology</span>
+                                <a href="technology.html" class="d-block h5 text-decoration-none mb-2" style="color: #0F172A; font-size: 1rem;">Professional Laptops</a>
+                                <p class="text-muted mb-0" style="font-size: 0.85rem;">MacBook, HP, Dell, Lenovo — for students, professionals & creatives.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products-mini-add border-top p-3 d-flex justify-content-between align-items-center">
+                        <a href="technology.html" class="btn rounded-pill py-2 px-3" style="background-color: #0A5FB4; color: white; font-size: 0.85rem;"><i class="fas fa-arrow-right me-1"></i> View More</a>
+                        <a href="https://wa.me/2347063785191?text=Hi,%20I'm%20interested%20in%20laptops%20from%20Toronto%20Technology" target="_blank" class="text-decoration-none" style="color: #25D366; font-size: 0.85rem;"><i class="fab fa-whatsapp me-1"></i> Enquire</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Item 5: Toronto Fashion - Men's & Women's Collection -->
+            <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="products-mini-item border rounded overflow-hidden" style="background-color: #FFFFFF;">
+                    <div class="row g-0">
+                        <div class="col-5">
+                            <div class="products-mini-img border-end h-100 position-relative">
+                                <img src="season-collection.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Fashion Collection at Toronto Fashion">
+                                <div class="position-absolute top-0 start-0 m-2">
+                                    <span class="badge" style="background-color: #0A5FB4;"><i class="fas fa-star me-1"></i> New Arrival</span>
+                                </div>
+                                <div class="products-mini-icon rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; background-color: #1D8A43; position: absolute; top: 10px; right: 10px;">
+                                    <a href="fashion.html"><i class="fa fa-eye fa-1x text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="products-mini-content p-3">
+                                <span class="d-block mb-1" style="font-size: 0.75rem; color: #1D8A43;"><i class="fas fa-tshirt me-1"></i> Toronto Fashion</span>
+                                <a href="fashion.html" class="d-block h5 text-decoration-none mb-2" style="color: #0F172A; font-size: 1rem;">Season Collection</a>
+                                <p class="text-muted mb-0" style="font-size: 0.85rem;">Fresh styles for men and women. Trendy, quality & affordable.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products-mini-add border-top p-3 d-flex justify-content-between align-items-center">
+                        <a href="fashion.html" class="btn rounded-pill py-2 px-3" style="background-color: #1D8A43; color: white; font-size: 0.85rem;"><i class="fas fa-arrow-right me-1"></i> View More</a>
+                        <a href="https://wa.me/2347063785191?text=Hi,%20I'm%20interested%20in%20the%20new%20collection%20at%20Toronto%20Fashion" target="_blank" class="text-decoration-none" style="color: #25D366; font-size: 0.85rem;"><i class="fab fa-whatsapp me-1"></i> Enquire</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 6: Toronto Kitchen - Daily Meals -->
+            <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="products-mini-item border rounded overflow-hidden" style="background-color: #FFFFFF;">
+                    <div class="row g-0">
+                        <div class="col-5">
+                            <div class="products-mini-img border-end h-100 position-relative">
+                                <img src="delicious-meal.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Daily Meals at Toronto Kitchen">
+                                <div class="position-absolute top-0 start-0 m-2">
+                                    <span class="badge" style="background-color: #1D8A43;"><i class="fas fa-heart me-1"></i> Most Loved</span>
+                                </div>
+                                <div class="products-mini-icon rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; background-color: #1D8A43; position: absolute; top: 10px; right: 10px;">
+                                    <a href="kitchen.html"><i class="fa fa-eye fa-1x text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="products-mini-content p-3">
+                                <span class="d-block mb-1" style="font-size: 0.75rem; color: #1D8A43;"><i class="fas fa-utensils me-1"></i> Toronto Kitchen</span>
+                                <a href="kitchen.html" class="d-block h5 text-decoration-none mb-2" style="color: #0F172A; font-size: 1rem;">Daily Specials</a>
+                                <p class="text-muted mb-0" style="font-size: 0.85rem;">Fresh, delicious meals prepared daily. Taste it, love it.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products-mini-add border-top p-3 d-flex justify-content-between align-items-center">
+                        <a href="kitchen.html" class="btn rounded-pill py-2 px-3" style="background-color: #1D8A43; color: white; font-size: 0.85rem;"><i class="fas fa-arrow-right me-1"></i> View More</a>
+                        <a href="https://wa.me/2347063785191?text=Hi,%20I'm%20interested%20in%20daily%20meals%20from%20Toronto%20Kitchen" target="_blank" class="text-decoration-none" style="color: #25D366; font-size: 0.85rem;"><i class="fab fa-whatsapp me-1"></i> Enquire</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Popular From Our Businesses End -->
+
+
+<!-- Contact Strip Start -->
+<div class="container-fluid py-5" style="background-color: #0F172A;">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.1s">
+                <h4 class="border-bottom border-2 d-inline-block p-2 mb-3" style="color: #0A5FB4; border-color: #0A5FB4 !important;">Get In Touch</h4>
+                <h1 class="display-5 mb-4 text-white">We'd Love to Hear From You</h1>
+                <p class="text-white-50 mb-5" style="line-height: 1.8;">
+                    Whether you want to enquire about a business, make a booking, or simply learn more about Toronto Multiventures — we are here for you. Reach out today.
+                </p>
+                
+                <div class="d-flex align-items-start mb-4">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 50px; height: 50px; background-color: rgba(10, 95, 180, 0.2);">
+                        <i class="fas fa-envelope fa-lg" style="color: #0A5FB4;"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h5 class="text-white mb-1">Email Us</h5>
+                        <p class="text-white-50 mb-0">
+                            <a href="mailto:Torontoenterprise1@gmail.com" class="text-white-50 text-decoration-none">Torontoenterprise1@gmail.com</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-start mb-4">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 50px; height: 50px; background-color: rgba(29, 138, 67, 0.2);">
+                        <i class="fas fa-phone-alt fa-lg" style="color: #1D8A43;"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h5 class="text-white mb-1">Phone</h5>
+                        <p class="text-white-50 mb-0">
+                            <a href="tel:+2347063785191" class="text-white-50 text-decoration-none">+234 706 378 5191</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-start mb-4">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 50px; height: 50px; background-color: rgba(10, 95, 180, 0.2);">
+                        <i class="fab fa-whatsapp fa-lg" style="color: #25D366;"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h5 class="text-white mb-1">WhatsApp</h5>
+                        <p class="text-white-50 mb-0">
+                            <a href="https://wa.me/2347063785191" target="_blank" class="text-white-50 text-decoration-none">+234 706 378 5191</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-start">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 50px; height: 50px; background-color: rgba(29, 138, 67, 0.2);">
+                        <i class="fas fa-clock fa-lg" style="color: #1D8A43;"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h5 class="text-white mb-1">Business Hours</h5>
+                        <p class="text-white-50 mb-0">Mon - Sat: 8:00 AM - 7:00 PM<br>Sunday: 10:00 AM - 5:00 PM</p>
+                    </div>
+                </div>
+
+                <div class="mt-5">
+                    <a href="https://wa.me/2347063785191" target="_blank" class="btn rounded-pill py-3 px-4 me-2 mb-2" style="background-color: #25D366; color: white;"><i class="fab fa-whatsapp me-2"></i> Chat on WhatsApp</a>
+                    <a href="contact.html" class="btn rounded-pill py-3 px-4 mb-2" style="background-color: #0A5FB4; color: white;"><i class="fas fa-paper-plane me-2"></i> Full Contact Page</a>
+                </div>
+            </div>
+
+            <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.3s">
+                <div class="rounded p-4 p-lg-5" style="background-color: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1);">
+                    <h3 class="text-white mb-4">Send Us a Message</h3>
+                    <form action="contact.html" method="POST">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control bg-transparent text-white border-secondary" id="name" name="name" placeholder="Your Name" style="border-color: rgba(255,255,255,0.2) !important;">
+                                    <label for="name" class="text-white-50">Your Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control bg-transparent text-white border-secondary" id="email" name="email" placeholder="Your Email" style="border-color: rgba(255,255,255,0.2) !important;">
+                                    <label for="email" class="text-white-50">Your Email</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating mb-3">
+                                    <select class="form-select bg-transparent text-white border-secondary" id="business" name="business" style="border-color: rgba(255,255,255,0.2) !important;">
+                                        <option value="" class="text-dark">Select Business</option>
+                                        <option value="technology" class="text-dark">Toronto Technology</option>
+                                        <option value="kitchen" class="text-dark">Toronto Kitchen</option>
+                                        <option value="gamehub" class="text-dark">Toronto GameHub</option>
+                                        <option value="salon" class="text-dark">Toronto Unisex Classic Salon</option>
+                                        <option value="fashion" class="text-dark">Toronto Fashion</option>
+                                        <option value="general" class="text-dark">General Enquiry</option>
+                                    </select>
+                                    <label for="business" class="text-white-50">Which Business?</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating mb-3">
+                                    <textarea class="form-control bg-transparent text-white border-secondary" id="message" name="message" placeholder="Your Message" style="height: 150px; border-color: rgba(255,255,255,0.2) !important;"></textarea>
+                                    <label for="message" class="text-white-50">Your Message</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn rounded-pill py-3 px-5" style="background-color: #0A5FB4; color: white;"><i class="fas fa-paper-plane me-2"></i> Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact Strip End -->
+
+<!-- Footer Start -->
+<div class="container-fluid py-5 wow fadeIn" data-wow-delay="0.2s" style="background-color: #0F172A;">
+    <div class="container py-5">
+        
+        <!-- Contact Info Strip -->
+        <div class="row g-4 rounded mb-5 p-4" style="background: rgba(255, 255, 255, 0.03);">
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="rounded p-3 text-center">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px; background-color: rgba(10, 95, 180, 0.2);">
+                        <i class="fas fa-envelope fa-2x" style="color: #0A5FB4;"></i>
+                    </div>
+                    <h5 class="text-white mb-2">Email Us</h5>
+                    <p class="text-white-50 mb-0" style="font-size: 0.9rem;">
+                        <a href="mailto:Torontoenterprise1@gmail.com" class="text-white-50 text-decoration-none">Torontoenterprise1<br>@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="rounded p-3 text-center">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px; background-color: rgba(29, 138, 67, 0.2);">
+                        <i class="fas fa-phone-alt fa-2x" style="color: #1D8A43;"></i>
+                    </div>
+                    <h5 class="text-white mb-2">Call Us</h5>
+                    <p class="text-white-50 mb-0" style="font-size: 0.9rem;">
+                        <a href="tel:+2347063785191" class="text-white-50 text-decoration-none">+234 706 378 5191</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="rounded p-3 text-center">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px; background-color: rgba(10, 95, 180, 0.2);">
+                        <i class="fab fa-whatsapp fa-2x" style="color: #25D366;"></i>
+                    </div>
+                    <h5 class="text-white mb-2">WhatsApp</h5>
+                    <p class="text-white-50 mb-0" style="font-size: 0.9rem;">
+                        <a href="https://wa.me/2347063785191" target="_blank" class="text-white-50 text-decoration-none">+234 706 378 5191<br>Fast Response</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="rounded p-3 text-center">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px; background-color: rgba(29, 138, 67, 0.2);">
+                        <i class="fas fa-clock fa-2x" style="color: #1D8A43;"></i>
+                    </div>
+                    <h5 class="text-white mb-2">Business Hours</h5>
+                    <p class="text-white-50 mb-0" style="font-size: 0.9rem;">Mon - Sat: 8AM - 7PM<br>Sunday: 10AM - 5PM</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Footer Columns -->
+        <div class="row g-5">
+            <!-- Column 1: Brand -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <a href="index.html" class="navbar-brand mb-3">
+                        <h3 class="m-0" style="color: #0A5FB4;"><i class="fas fa-building me-2" style="color: #1D8A43;"></i>Toronto</h3>
+                        <small class="d-block text-white-50" style="font-size: 0.7rem; letter-spacing: 1.5px; margin-top: -3px;">MULTIVENTURES CONCEPT</small>
+                    </a>
+                    <p class="text-white-50 mb-3" style="font-size: 0.9rem;">One company. Multiple successful businesses. Toronto Multiventures Concept brings together Technology, Kitchen, GameHub, Salon, and Fashion under one trusted brand.</p>
+                </div>
+            </div>
+            <!-- Column 2: Quick Links -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="mb-4" style="color: #0A5FB4;">Quick Links</h4>
+                    <a href="index.html" class="text-white-50 text-decoration-none mb-2 hover-white"><i class="fas fa-angle-right me-2" style="color: #1D8A43;"></i> Home</a>
+                    <a href="about.html" class="text-white-50 text-decoration-none mb-2 hover-white"><i class="fas fa-angle-right me-2" style="color: #1D8A43;"></i> About Us</a>
+                    <a href="gallery.html" class="text-white-50 text-decoration-none mb-2 hover-white"><i class="fas fa-angle-right me-2" style="color: #1D8A43;"></i> Gallery</a>
+                    <a href="contact.html" class="text-white-50 text-decoration-none mb-0 hover-white"><i class="fas fa-angle-right me-2" style="color: #1D8A43;"></i> Contact</a>
+                </div>
+            </div>
+
+            <!-- Column 3: Our Businesses -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="mb-4" style="color: #0A5FB4;">Our Businesses</h4>
+                    <a href="technology.html" class="text-white-50 text-decoration-none mb-2 hover-white"><i class="fas fa-angle-right me-2" style="color: #1D8A43;"></i> Toronto Technology</a>
+                    <a href="kitchen.html" class="text-white-50 text-decoration-none mb-2 hover-white"><i class="fas fa-angle-right me-2" style="color: #1D8A43;"></i> Toronto Kitchen</a>
+                    <a href="gamehub.html" class="text-white-50 text-decoration-none mb-2 hover-white"><i class="fas fa-angle-right me-2" style="color: #1D8A43;"></i> Toronto GameHub</a>
+                    <a href="salon.html" class="text-white-50 text-decoration-none mb-2 hover-white"><i class="fas fa-angle-right me-2" style="color: #1D8A43;"></i> Toronto Unisex Classic Salon</a>
+                    <a href="fashion.html" class="text-white-50 text-decoration-none mb-0 hover-white"><i class="fas fa-angle-right me-2" style="color: #1D8A43;"></i> Toronto Fashion</a>
+                </div>
+            </div>
+
+            <!-- Column 4: Connect With Us -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="mb-4" style="color: #0A5FB4;">Connect With Us</h4>
+                    <p class="text-white-50 mb-3" style="font-size: 0.9rem;">Follow us on social media for updates across all our businesses.</p>
+                    <div class="d-flex mb-4">
+                        <a href="https://instagram.com" target="_blank" class="btn btn-outline-light btn-sm rounded-circle me-2" style="width: 40px; height: 40px; border-color: rgba(255,255,255,0.2);"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com" target="_blank" class="btn btn-outline-light btn-sm rounded-circle me-2" style="width: 40px; height: 40px; border-color: rgba(255,255,255,0.2);"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/2347063785191" target="_blank" class="btn btn-sm rounded-circle me-2" style="width: 40px; height: 40px; background-color: #25D366; color: white;"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:Torontoenterprise1@gmail.com" class="btn btn-outline-light btn-sm rounded-circle" style="width: 40px; height: 40px; border-color: rgba(255,255,255,0.2);"><i class="fas fa-envelope"></i></a>
+                    </div>
+                    <h5 class="text-white mb-2" style="font-size: 1rem;">Business Hours</h5>
+                    <p class="text-white-50 mb-1" style="font-size: 0.85rem;"><i class="far fa-clock me-2" style="color: #1D8A43;"></i> Mon - Sat: 8AM - 7PM</p>
+                    <p class="text-white-50 mb-0" style="font-size: 0.85rem;"><i class="far fa-clock me-2" style="color: #1D8A43;"></i> Sunday: 10AM - 5PM</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+<!-- Copyright Start -->
+<div class="container-fluid py-4" style="background-color: #0A5FB4;">
+    <div class="container">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-6 text-center text-md-start mb-md-0">
+                <span class="text-white">
+                    <i class="fas fa-copyright text-light me-2"></i>
+                    <span class="fw-bold">Toronto Multiventures Concept</span>. All Rights Reserved.
+                </span>
+            </div>
+            <div class="col-md-6 text-center text-md-end text-white">
+                <span style="font-size: 0.85rem;">One Company. Multiple Successful Businesses.</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Copyright End -->
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg-square back-to-top" style="background-color: #0A5FB4; color: white; border: 0;"><i class="fa fa-arrow-up"></i></a>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/2347063785191?text=Hi%20Toronto%20Multiventures%20Concept,%20I%20visited%20your%20website%20and%20I%20would%20like%20to%20enquire%20about..." target="_blank" class="btn btn-lg-square position-fixed rounded-circle d-flex align-items-center justify-content-center" style="background-color: #25D366; color: white; width: 60px; height: 60px; bottom: 30px; right: 30px; z-index: 9999; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); animation: pulse 2s infinite;">
+    <i class="fab fa-whatsapp fa-2x"></i>
+</a>
+
+<style>
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+</style>
+
+
+  
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/2347063785191?text=Hi%20Toronto%20Technology%20%26%20Enterprises,%20I%20visited%20your%20website%20and%20I%20would%20like%20to..." target="_blank" class="btn btn-lg-square position-fixed rounded-circle d-flex align-items-center justify-content-center" style="background-color: #25D366; color: white; width: 60px; height: 60px; bottom: 30px; right: 30px; z-index: 9999; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); animation: pulse 2s infinite;">
+    <i class="fab fa-whatsapp fa-2x"></i>
+</a>
+
+<style>
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+</style>
+
+
+        
+
+        
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="wow.min.js"></script>
+    <script src="owl.carousel.min.js"></script>
+    
+
+    <!-- Template Javascript -->
+    <script src="main.js"></script>
+    </body>
+
+</html>
