@@ -1,0 +1,840 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Gallery — Toronto Multiventures</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Same fonts as index -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Same icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Same libraries -->
+    <link href="animate.min.css" rel="stylesheet">
+    <link href="owl.carousel.min.css" rel="stylesheet">
+
+    <!-- PhotoSwipe CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe.min.css">
+
+    <!-- Same Bootstrap + your style -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <!-- Gallery-specific styles (add these to your style.css later) -->
+    <style>
+        /* ===== GALLERY PAGE STYLES ===== */
+        
+        .gallery-hero {
+            background: linear-gradient(135deg, #0F172A 0%, #1e293b 100%);
+            padding: 100px 20px 60px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .gallery-hero h1 {
+            color: #0A5FB4;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .gallery-hero p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Filter Tabs */
+        .gallery-filter {
+            background: #fff;
+            padding: 25px 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .filter-btn {
+            padding: 10px 25px;
+            border: 2px solid #0A5FB4;
+            background: transparent;
+            color: #0A5FB4;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 50px;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover {
+            background: #0A5FB4;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(10, 95, 180, 0.3);
+        }
+        
+        .filter-btn.active {
+            background: #0A5FB4;
+            color: #fff;
+            box-shadow: 0 5px 15px rgba(10, 95, 180, 0.3);
+        }
+
+        /* Gallery Grid */
+        .gallery-section {
+            background: #F5F7FA;
+            padding: 60px 0;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            margin-bottom: 24px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+        
+        /* Overlay */
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px 20px 20px;
+            background: linear-gradient(transparent, rgba(15, 23, 42, 0.95));
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        .gallery-overlay .biz-tag {
+            display: inline-block;
+            padding: 4px 14px;
+            background: rgba(10, 95, 180, 0.9);
+            color: #fff;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 20px;
+            margin-bottom: 8px;
+        }
+        
+        .gallery-overlay h4 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .gallery-overlay p {
+            color: #cbd5e1;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin-bottom: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .view-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 45px;
+            height: 45px;
+            background: #0A5FB4;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1rem;
+            transform: scale(0);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .gallery-item:hover .view-icon {
+            transform: scale(1);
+        }
+
+        /* Different heights for visual interest */
+        .gallery-item.tall {
+            height: 400px;
+        }
+        
+        .gallery-item.wide {
+            height: 280px;
+        }
+        
+        .gallery-item.square {
+            height: 320px;
+        }
+
+        /* Load More */
+        .load-more-container {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .load-more-btn {
+            padding: 14px 45px;
+            background: #0A5FB4;
+            border: 2px solid #0A5FB4;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .load-more-btn:hover {
+            background: transparent;
+            color: #0A5FB4;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(10, 95, 180, 0.2);
+        }
+
+        /* PhotoSwipe custom caption */
+        .pswp__custom-caption {
+            background: rgba(15, 23, 42, 0.9);
+            color: #fff;
+            padding: 15px 25px;
+            border-radius: 8px;
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            backdrop-filter: blur(10px);
+            max-width: 80%;
+        }
+        
+        .pswp__custom-caption h4 {
+            color: #0A5FB4;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .pswp__custom-caption p {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .gallery-item.tall,
+            .gallery-item.wide,
+            .gallery-item.square {
+                height: 250px;
+            }
+            
+            .filter-btn {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<!-- Spinner -->
+<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+<!-- ===== TOPBAR (copy from index.html) ===== -->
+<div class="container-fluid px-5 d-none border-bottom d-lg-block" style="background-color: #0F172A;">
+    <div class="row gx-0 align-items-center">
+        <div class="col-lg-4 text-center text-lg-start mb-lg-0">
+            <div class="d-inline-flex align-items-center" style="height: 45px;">
+                <a href="about.html" class="text-white me-3"><small><i class="fas fa-info-circle me-1"></i> About</small></a>
+                <span class="text-white-50">|</span>
+                <a href="gallery.html" class="text-white mx-3"><small><i class="fas fa-images me-1"></i> Gallery</small></a>
+                <span class="text-white-50">|</span>
+                <a href="contact.html" class="text-white ms-3"><small><i class="fas fa-envelope me-1"></i> Contact</small></a>
+            </div>
+        </div>
+        <div class="col-lg-4 text-center d-flex align-items-center justify-content-center">
+            <small class="text-white-50 me-2"><i class="fas fa-phone-alt me-1"></i> Call Us:</small>
+            <a href="tel:+2347063785191" class="text-white fw-bold"><small>+234 706 378 5191</small></a>
+        </div>
+        <div class="col-lg-4 text-center text-lg-end">
+            <div class="d-inline-flex align-items-center" style="height: 45px;">
+                <a href="https://wa.me/2347063785191" target="_blank" class="text-white me-3"><small><i class="fab fa-whatsapp me-1"></i> WhatsApp</small></a>
+                <span class="text-white-50">|</span>
+                <a href="https://instagram.com" target="_blank" class="text-white mx-3"><small><i class="fab fa-instagram me-1"></i> Instagram</small></a>
+                <span class="text-white-50">|</span>
+                <a href="https://facebook.com" target="_blank" class="text-white ms-3"><small><i class="fab fa-facebook me-1"></i> Facebook</small></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid px-5 py-4 d-none d-lg-block" style="background-color: #FFFFFF;">
+    <div class="row gx-0 align-items-center text-center">
+        <div class="col-md-4 col-lg-3 text-center text-lg-start">
+            <div class="d-inline-flex align-items-center">
+                <a href="index.html" class="navbar-brand p-0">
+                    <h1 class="display-6 m-0" style="color: #0A5FB4;"><i class="fas fa-building me-2" style="color: #1D8A43;"></i>Toronto</h1>
+                    <small class="d-block text-muted" style="font-size: 0.75rem; letter-spacing: 2px; margin-top: -5px;">MULTIVENTURES CONCEPT</small>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4 col-lg-6 text-center">
+            <p class="text-muted mb-0" style="font-size: 0.95rem; letter-spacing: 1px;">
+                <em>One Company. Multiple Successful Businesses.</em>
+            </p>
+        </div>
+        <div class="col-md-4 col-lg-3 text-center text-lg-end">
+            <div class="d-inline-flex align-items-center">
+                <a href="https://wa.me/2347063785191" target="_blank" class="d-flex align-items-center justify-content-center" style="color: #25D366;">
+                    <span class="rounded-circle btn-md-square border" style="border-color: #25D366 !important;"><i class="fab fa-whatsapp"></i></span>
+                    <span class="text-dark ms-2 d-none d-xl-inline">Chat</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== NAVBAR (copy from index.html) ===== -->
+<div class="container-fluid nav-bar p-0">
+    <div class="row gx-0 px-5 align-items-center" style="background-color: #0A5FB4;">
+        <div class="col-12">
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0A5FB4;">
+                <a href="index.html" class="navbar-brand d-block d-lg-none">
+                    <h1 class="display-6 m-0 text-white"><i class="fas fa-building me-2" style="color: #1D8A43;"></i>Toronto</h1>
+                </a>
+                <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars fa-1x text-white"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto py-0">
+                        <a href="index.html" class="nav-item nav-link text-white">Home</a>
+                        <a href="about.html" class="nav-item nav-link text-white">About</a>
+                        <a href="gallery.html" class="nav-item nav-link active text-white fw-bold">Gallery</a>
+                        <a href="contact.html" class="nav-item nav-link text-white me-2">Contact</a>
+                    </div>
+                    <a href="tel:+2347063785191" class="btn rounded-pill py-2 px-4 px-lg-3 mb-3 mb-md-3 mb-lg-0" style="background-color: #1D8A43; color: white; border: 0;"><i class="fab fa-whatsapp me-2"></i> +234 706 378 5191</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- ===== GALLERY HERO ===== -->
+<div class="gallery-hero wow fadeIn" data-wow-delay="0.1s">
+    <h1><i class="fas fa-images me-3"></i>Our Gallery</h1>
+    <p>Explore moments from all Toronto Multiventures businesses. Quality, style, and excellence in every frame.</p>
+</div>
+
+<!-- ===== FILTER TABS ===== -->
+<div class="gallery-filter wow fadeInUp" data-wow-delay="0.2s">
+    <div class="container text-center">
+        <button class="filter-btn active" data-filter="all">
+            <i class="fas fa-th-large me-2"></i>All
+        </button>
+        <button class="filter-btn" data-filter="technology">
+            <i class="fas fa-microchip me-2"></i>Technology
+        </button>
+        <button class="filter-btn" data-filter="kitchen">
+            <i class="fas fa-utensils me-2"></i>Kitchen
+        </button>
+        <button class="filter-btn" data-filter="gamehub">
+            <i class="fas fa-gamepad me-2"></i>GameHub
+        </button>
+        <button class="filter-btn" data-filter="salon">
+            <i class="fas fa-cut me-2"></i>Salon
+        </button>
+        <button class="filter-btn" data-filter="fashion">
+            <i class="fas fa-tshirt me-2"></i>Fashion
+        </button>
+    </div>
+</div>
+
+<!-- ===== GALLERY GRID ===== -->
+<div class="gallery-section">
+    <div class="container">
+        <div class="row g-4" id="galleryGrid">
+            
+            <!-- Row 1 -->
+            <!-- Technology - Tall -->
+            <div class="col-md-6 col-lg-4 gallery-item-wrapper" data-business="technology">
+                <div class="gallery-item tall" 
+                     data-pswp-src="uploads/technology/gallery-1.jpg"
+                     data-pswp-width="1200" 
+                     data-pswp-height="1600">
+                    <img src="latest-smartphones.jpg" alt="Toronto Technology" loading="lazy">
+                    <div class="view-icon"><i class="fas fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="biz-tag"><i class="fas fa-microchip me-1"></i> Technology</span>
+                        <h4>Latest Smartphones</h4>
+                        <p>Premium smartphones from top brands. New and UK used available.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kitchen - Wide -->
+            <div class="col-md-6 col-lg-4 gallery-item-wrapper" data-business="kitchen">
+                <div class="gallery-item wide"
+                     data-pswp-src="signature-dishes.jpg"
+                     data-pswp-width="1200" 
+                     data-pswp-height="800">
+                    <img src="signature-dishes.jpg" alt="Toronto Kitchen" loading="lazy">
+                    <div class="view-icon"><i class="fas fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="biz-tag" style="background: rgba(29, 138, 67, 0.9);"><i class="fas fa-utensils me-1"></i> Kitchen</span>
+                        <h4>Delicious Meals</h4>
+                        <p>Fresh, tasty food prepared with love. Taste it, love it.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GameHub - Square -->
+            <div class="col-md-6 col-lg-4 gallery-item-wrapper" data-business="gamehub">
+                <div class="gallery-item square"
+                     data-pswp-src="uploads/gamehub/gallery-1.jpg"
+                     data-pswp-width="1200" 
+                     data-pswp-height="1200">
+                    <img src="environment.jpg" alt="Toronto GameHub" loading="lazy">
+                    <div class="view-icon"><i class="fas fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="biz-tag"><i class="fas fa-gamepad me-1"></i> GameHub</span>
+                        <h4>Gaming Consoles</h4>
+                        <p>PlayStation, Xbox and the latest gaming systems.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <!-- Salon - Wide -->
+            <div class="col-md-6 col-lg-4 gallery-item-wrapper" data-business="salon">
+                <div class="gallery-item wide"
+                     data-pswp-src="uploads/salon/gallery-1.jpg"
+                     data-pswp-width="1200" 
+                     data-pswp-height="800">
+                    <img src="styling.jpg" alt="Toronto Salon" loading="lazy">
+                    <div class="view-icon"><i class="fas fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="biz-tag" style="background: rgba(29, 138, 67, 0.9);"><i class="fas fa-cut me-1"></i> Salon</span>
+                        <h4>Professional Styling</h4>
+                        <p>Expert haircuts, treatment and beauty services for all.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fashion - Tall -->
+            <div class="col-md-6 col-lg-4 gallery-item-wrapper" data-business="fashion">
+                <div class="gallery-item tall"
+                     data-pswp-src="uploads/fashion/gallery-1.jpg"
+                     data-pswp-width="1200" 
+                     data-pswp-height="1600">
+                    <img src="men2.jpg" alt="Toronto Fashion" loading="lazy">
+                    <div class="view-icon"><i class="fas fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="biz-tag" style="background: rgba(29, 138, 67, 0.9);"><i class="fas fa-tshirt me-1"></i> Fashion</span>
+                        <h4>Trendy Collection</h4>
+                        <p>Stylish clothing and accessories for men and women.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology - Square -->
+            <div class="col-md-6 col-lg-4 gallery-item-wrapper" data-business="technology">
+                <div class="gallery-item square"
+                     data-pswp-src="uploads/technology/gallery-2.jpg"
+                     data-pswp-width="1200" 
+                     data-pswp-height="1200">
+                    <img src="gadget.jpg" alt="Toronto Technology" loading="lazy">
+                    <div class="view-icon"><i class="fas fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="biz-tag"><i class="fas fa-microchip me-1"></i> Technology</span>
+                        <h4>Laptops & Gadgets</h4>
+                        <p>MacBook, HP, Dell and more for work and play.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3 -->
+            <!-- Kitchen - Tall -->
+            <div class="col-md-6 col-lg-4 gallery-item-wrapper" data-business="kitchen">
+                <div class="gallery-item tall"
+                     data-pswp-src="uploads/kitchen/gallery-2.jpg"
+                     data-pswp-width="1200" 
+                     data-pswp-height="1600">
+                    <img src="event-catering.jpg" alt="Toronto Kitchen" loading="lazy">
+                    <div class="view-icon"><i class="fas fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="biz-tag" style="background: rgba(29, 138, 67, 0.9);"><i class="fas fa-utensils me-1"></i> Kitchen</span>
+                        <h4>Event Catering</h4>
+                                              <p>Professional catering for weddings, parties and corporate events.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GameHub - Wide -->
+            <div class="col-md-6 col-lg-4 gallery-item-wrapper" data-business="gamehub">
+                <div class="gallery-item wide"
+                     data-pswp-src="uploads/gamehub/gallery-2.jpg"
+                     data-pswp-width="1200" 
+                     data-pswp-height="800">
+                    <img src="gaming-consoles.jpg" alt="Toronto GameHub" loading="lazy">
+                    <div class="view-icon"><i class="fas fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="biz-tag"><i class="fas fa-gamepad me-1"></i> GameHub</span>
+                        <h4>Gaming Accessories</h4>
+                        <p>Controllers, headsets, charging docks and gaming gear.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Salon - Square -->
+            <div class="col-md-6 col-lg-4 gallery-item-wrapper" data-business="salon">
+                <div class="gallery-item square"
+                     data-pswp-src="uploads/salon/gallery-2.jpg"
+                     data-pswp-width="1200" 
+                     data-pswp-height="1200">
+                    <img src="hair-dye.jpg" alt="Toronto Salon" loading="lazy">
+                    <div class="view-icon"><i class="fas fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="biz-tag" style="background: rgba(29, 138, 67, 0.9);"><i class="fas fa-cut me-1"></i> Salon</span>
+                        <h4>Hair Treatment</h4>
+                        <p>Deep conditioning, coloring and complete hair care.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 4 -->
+            <!-- Fashion - Wide -->
+            <div class="col-md-6 col-lg-4 gallery-item-wrapper" data-business="fashion">
+                <div class="gallery-item wide"
+                     data-pswp-src="uploads/fashion/gallery-2.jpg"
+                     data-pswp-width="1200" 
+                     data-pswp-height="800">
+                    <img src="men3.jpg" alt="Toronto Fashion" loading="lazy">
+                    <div class="view-icon"><i class="fas fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="biz-tag" style="background: rgba(29, 138, 67, 0.9);"><i class="fas fa-tshirt me-1"></i> Fashion</span>
+                        <h4>Men's Collection</h4>
+                        <p>Shirts, trousers, shoes and accessories for the modern man.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology - Tall -->
+            <div class="col-md-6 col-lg-4 gallery-item-wrapper" data-business="technology">
+                <div class="gallery-item tall"
+                     data-pswp-src="smartwatch.jpg"
+                     data-pswp-width="1200" 
+                     data-pswp-height="1600">
+                    <img src="tech-accessories.jpg" alt="Toronto Technology" loading="lazy">
+                    <div class="view-icon"><i class="fas fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="biz-tag"><i class="fas fa-microchip me-1"></i> Technology</span>
+                        <h4>Tech Accessories</h4>
+                        <p>Chargers, cases, headphones, smartwatches and more.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kitchen - Square -->
+            <div class="col-md-6 col-lg-4 gallery-item-wrapper" data-business="kitchen">
+                <div class="gallery-item square"
+                     data-pswp-src=kitchen2.jpg"
+                     data-pswp-width="1200" 
+                     data-pswp-height="1200">
+                    <img src="kitchen2.jpg" alt="Toronto Kitchen" loading="lazy">
+                    <div class="view-icon"><i class="fas fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="biz-tag" style="background: rgba(29, 138, 67, 0.9);"><i class="fas fa-utensils me-1"></i> Kitchen</span>
+                        <h4>Signature Dishes</h4>
+                        <p>Chef's special recipes crafted with passion.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Load More Button -->
+        <div class="load-more-container wow fadeInUp" data-wow-delay="0.3s">
+            <button class="load-more-btn" id="loadMoreBtn">
+                <i class="fas fa-plus-circle me-2"></i>Load More
+            </button>
+        </div>
+    </div>
+</div>
+<!-- ===== FOOTER (copy from index.html) ===== -->
+<div class="container-fluid py-5 wow fadeIn" data-wow-delay="0.2s" style="background-color: #0F172A;">
+    <div class="container py-5">
+        
+        <!-- Contact Info Strip -->
+        <div class="row g-4 rounded mb-5 p-4" style="background: rgba(255, 255, 255, 0.03);">
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="rounded p-3 text-center">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px; background-color: rgba(10, 95, 180, 0.2);">
+                        <i class="fas fa-envelope fa-2x" style="color: #0A5FB4;"></i>
+                    </div>
+                    <h5 class="text-white mb-2">Email Us</h5>
+                    <p class="text-white-50 mb-0" style="font-size: 0.9rem;">
+                        <a href="mailto:Torontoenterprise1@gmail.com" class="text-white-50 text-decoration-none">Torontoenterprise1<br>@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="rounded p-3 text-center">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px; background-color: rgba(29, 138, 67, 0.2);">
+                        <i class="fas fa-phone-alt fa-2x" style="color: #1D8A43;"></i>
+                    </div>
+                    <h5 class="text-white mb-2">Call Us</h5>
+                    <p class="text-white-50 mb-0" style="font-size: 0.9rem;">
+                        <a href="tel:+2347063785191" class="text-white-50 text-decoration-none">+234 706 378 5191</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="rounded p-3 text-center">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px; background-color: rgba(10, 95, 180, 0.2);">
+                        <i class="fab fa-whatsapp fa-2x" style="color: #25D366;"></i>
+                    </div>
+                    <h5 class="text-white mb-2">WhatsApp</h5>
+                    <p class="text-white-50 mb-0" style="font-size: 0.9rem;">
+                        <a href="https://wa.me/2347063785191" target="_blank" class="text-white-50 text-decoration-none">+234 706 378 5191<br>Fast Response</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="rounded p-3 text-center">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px; background-color: rgba(29, 138, 67, 0.2);">
+                        <i class="fas fa-clock fa-2x" style="color: #1D8A43;"></i>
+                    </div>
+                    <h5 class="text-white mb-2">Business Hours</h5>
+                    <p class="text-white-50 mb-0" style="font-size: 0.9rem;">Mon - Sat: 8AM - 7PM<br>Sunday: 10AM - 5PM</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Footer Columns -->
+        <div class="row g-5">
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <a href="index.html" class="navbar-brand mb-3">
+                        <h3 class="m-0" style="color: #0A5FB4;"><i class="fas fa-building me-2" style="color: #1D8A43;"></i>Toronto</h3>
+                        <small class="d-block text-white-50" style="font-size: 0.7rem; letter-spacing: 1.5px; margin-top: -3px;">MULTIVENTURES CONCEPT</small>
+                    </a>
+                    <p class="text-white-50 mb-3" style="font-size: 0.9rem;">One company. Multiple successful businesses. Toronto Multiventures Concept brings together Technology, Kitchen, GameHub, Salon, and Fashion under one trusted brand.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="mb-4" style="color: #0A5FB4;">Quick Links</h4>
+                    <a href="index.html" class="text-white-50 text-decoration-none mb-2 hover-white"><i class="fas fa-angle-right me-2" style="color: #1D8A43;"></i> Home</a>
+                    <a href="about.html" class="text-white-50 text-decoration-none mb-2 hover-white"><i class="fas fa-angle-right me-2" style="color: #1D8A43;"></i> About Us</a>
+                    <a href="gallery.html" class="text-white-50 text-decoration-none mb-2 hover-white"><i class="fas fa-angle-right me-2" style="color: #1D8A43;"></i> Gallery</a>
+                    <a href="contact.html" class="text-white-50 text-decoration-none mb-0 hover-white"><i class="fas fa-angle-right me-2" style="color: #1D8A43;"></i> Contact</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="mb-4" style="color: #0A5FB4;">Our Businesses</h4>
+                    <a href="technology.html" class="text-white-50 text-decoration-none mb-2 hover-white"><i class="fas fa-angle-right me-2" style="color: #1D8A43;"></i> Toronto Technology</a>
+                    <a href="kitchen.html" class="text-white-50 text-decoration-none mb-2 hover-white"><i class="fas fa-angle-right me-2" style="color: #1D8A43;"></i> Toronto Kitchen</a>
+                    <a href="gamehub.html" class="text-white-50 text-decoration-none mb-2 hover-white"><i class="fas fa-angle-right me-2" style="color: #1D8A43;"></i> Toronto GameHub</a>
+                    <a href="salon.html" class="text-white-50 text-decoration-none mb-2 hover-white"><i class="fas fa-angle-right me-2" style="color: #1D8A43;"></i> Toronto Unisex Classic Salon</a>
+                    <a href="fashion.html" class="text-white-50 text-decoration-none mb-0 hover-white"><i class="fas fa-angle-right me-2" style="color: #1D8A43;"></i> Toronto Fashion</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="mb-4" style="color: #0A5FB4;">Connect With Us</h4>
+                    <p class="text-white-50 mb-3" style="font-size: 0.9rem;">Follow us on social media for updates across all our businesses.</p>
+                    <div class="d-flex mb-4">
+                        <a href="https://instagram.com" target="_blank" class="btn btn-outline-light btn-sm rounded-circle me-2" style="width: 40px; height: 40px; border-color: rgba(255,255,255,0.2);"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com" target="_blank" class="btn btn-outline-light btn-sm rounded-circle me-2" style="width: 40px; height: 40px; border-color: rgba(255,255,255,0.2);"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/2347063785191" target="_blank" class="btn btn-sm rounded-circle me-2" style="width: 40px; height: 40px; background-color: #25D366; color: white;"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:Torontoenterprise1@gmail.com" class="btn btn-outline-light btn-sm rounded-circle" style="width: 40px; height: 40px; border-color: rgba(255,255,255,0.2);"><i class="fas fa-envelope"></i></a>
+                    </div>
+                    <h5 class="text-white mb-2" style="font-size: 1rem;">Business Hours</h5>
+                    <p class="text-white-50 mb-1" style="font-size: 0.85rem;"><i class="far fa-clock me-2" style="color: #1D8A43;"></i> Mon - Sat: 8AM - 7PM</p>
+                    <p class="text-white-50 mb-0" style="font-size: 0.85rem;"><i class="far fa-clock me-2" style="color: #1D8A43;"></i> Sunday: 10AM - 5PM</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Copyright -->
+<div class="container-fluid py-4" style="background-color: #0A5FB4;">
+    <div class="container">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-6 text-center text-md-start mb-md-0">
+                <span class="text-white">
+                    <i class="fas fa-copyright text-light me-2"></i>
+                    <span class="fw-bold">Toronto Multiventures Concept</span>. All Rights Reserved.
+                </span>
+            </div>
+            <div class="col-md-6 text-center text-md-end text-white">
+                <span style="font-size: 0.85rem;">One Company. Multiple Successful Businesses.</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg-square back-to-top" style="background-color: #0A5FB4; color: white; border: 0;"><i class="fa fa-arrow-up"></i></a>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/2347063785191?text=Hi%20Toronto%20Multiventures%20Concept,%20I%20visited%20your%20website%20and%20I%20would%20like%20to%20enquire%20about..." target="_blank" class="btn btn-lg-square position-fixed rounded-circle d-flex align-items-center justify-content-center" style="background-color: #25D366; color: white; width: 60px; height: 60px; bottom: 30px; right: 30px; z-index: 9999; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); animation: pulse 2s infinite;">
+    <i class="fab fa-whatsapp fa-2x"></i>
+</a>
+
+<style>
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+</style>
+
+<!-- ===== SCRIPTS ===== -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="wow.min.js"></script>
+<script src="owl.carousel.min.js"></script>
+<script src="main.js"></script>
+
+<!-- PhotoSwipe 5 -->
+<script type="module">
+    import PhotoSwipeLightbox from 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe-lightbox.esm.min.js';
+    import PhotoSwipe from 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe.esm.min.js';
+
+    const lightbox = new PhotoSwipeLightbox({
+        gallery: '#galleryGrid',
+        children: '.gallery-item',
+        pswpModule: PhotoSwipe,
+        padding: { top: 20, bottom: 20, left: 20, right: 20 },
+        showHideAnimationType: 'zoom',
+        bgOpacity: 0.95,
+    });
+
+    // Custom caption in lightbox
+    lightbox.on('uiRegister', function() {
+        lightbox.pswp.ui.registerElement({
+            name: 'custom-caption',
+            order: 9,
+            isButton: false,
+            appendTo: 'root',
+            html: '',
+            onInit: (el, pswp) => {
+                lightbox.pswp.on('change', () => {
+                    const currSlide = lightbox.pswp.currSlide;
+                    const item = currSlide.data.element;
+                    if (item) {
+                        const caption = item.querySelector('h4')?.textContent || '';
+                        const desc = item.querySelector('p')?.textContent || '';
+                        const biz = item.querySelector('.biz-tag')?.textContent || '';
+                        el.innerHTML = `
+                            <div class="pswp__custom-caption">
+                                <h4>${biz}</h4>
+                                <p><strong>${caption}</strong>${desc ? ' — ' + desc : ''}</p>
+                            </div>
+                        `;
+                    }
+                });
+            }
+        });
+    });
+
+    lightbox.init();
+
+    // ===== FILTER FUNCTIONALITY =====
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item-wrapper');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.dataset.filter;
+
+            // Update active button
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Filter items with animation
+            galleryItems.forEach(item => {
+                const business = item.dataset.business;
+                const shouldShow = filter === 'all' || business === filter;
+
+                if (shouldShow) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.9)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+
+            // Re-init PhotoSwipe after filter
+            setTimeout(() => lightbox.init(), 350);
+        });
+    });
+
+    // ===== LOAD MORE =====
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function() {
+            // Demo: Show hidden items (in real app, fetch via AJAX)
+            this.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Loading...';
+            
+            setTimeout(() => {
+                // In real implementation, fetch more images from server
+                // For now, just show a message
+                this.innerHTML = '<i class="fas fa-check me-2"></i>All Images Loaded';
+                this.disabled = true;
+                this.style.opacity = '0.6';
+                this.style.cursor = 'default';
+            }, 1000);
+        });
+    }
+</script>
+
+</body>
+</html>

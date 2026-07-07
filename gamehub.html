@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Toronto GameHub — Level Up Your Experience</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="gaming, playstation, xbox, consoles, entertainment" name="keywords">
+    <meta content="Toronto GameHub — Gaming and entertainment center. Consoles, accessories, and immersive experiences." name="description">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="animate.min.css" rel="stylesheet">
+    <link href="owl.carousel.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe.min.css">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <style>
+        /* ===== GAMEHUB THEME: PURPLE/BLUE ACCENT ===== */
+        .gamehub-hero{position:relative;height:85vh;min-height:600px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#0F172A}
+        .gamehub-hero-bg{position:absolute;top:0;left:0;width:100%;height:120%;background:url('uploads/gamehub/hero-gamehub.jpg') center/cover no-repeat;opacity:.35}
+        .gamehub-hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(180deg,rgba(15,23,42,.85) 0%,rgba(15,23,42,.4) 50%,rgba(15,23,42,.95) 100%)}
+        .gamehub-hero-content{position:relative;z-index:2;text-align:center;max-width:900px;padding:20px}
+        .gamehub-hero-badge{display:inline-block;padding:8px 25px;background:rgba(139,92,246,.2);border:1px solid rgba(139,92,246,.5);color:#8b5cf6;font-size:.85rem;text-transform:uppercase;letter-spacing:3px;border-radius:50px;margin-bottom:25px;backdrop-filter:blur(10px)}
+        .gamehub-hero h1{font-size:clamp(2.5rem,6vw,5rem);color:#fff;font-weight:700;margin-bottom:20px;text-shadow:0 4px 30px rgba(0,0,0,.3)}
+        .gamehub-hero h1 span{color:#8b5cf6}
+        .gamehub-hero p{font-size:clamp(1rem,2vw,1.3rem);color:#94a3b8;margin-bottom:35px;max-width:600px;margin-left:auto;margin-right:auto}
+        .hero-btns .btn{padding:14px 40px;font-size:1rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;border-radius:50px;margin:8px;transition:all .4s ease}
+        .btn-primary-gamehub{background:#8b5cf6;color:#fff;border:2px solid #8b5cf6}
+        .btn-primary-gamehub:hover{background:transparent;color:#8b5cf6;transform:translateY(-3px);box-shadow:0 10px 30px rgba(139,92,246,.3)}
+        .btn-outline-gamehub{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.3)}
+        .btn-outline-gamehub:hover{border-color:#fff;background:rgba(255,255,255,.1);transform:translateY(-3px)}
+
+        /* Stats Bar */
+        .stats-bar-gamehub{background:linear-gradient(135deg,#8b5cf6 0%,#a78bfa 100%);padding:40px 0;position:relative;overflow:hidden}
+        .stats-bar-gamehub::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.1) 1px,transparent 1px);background-size:30px 30px;opacity:.3}
+        .stat-item-gamehub{text-align:center;position:relative;z-index:1}
+        .stat-item-gamehub::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:50px;background:rgba(255,255,255,.2)}
+        .stat-item-gamehub:last-child::after{display:none}
+        .stat-number-gamehub{font-size:2.5rem;font-weight:700;color:#fff;display:block;line-height:1}
+        .stat-label-gamehub{font-size:.9rem;color:rgba(255,255,255,.8);text-transform:uppercase;letter-spacing:2px;margin-top:8px}
+
+        /* About */
+        .about-gamehub{background:#fff;padding:100px 0}
+        .about-image-collage-gamehub{position:relative;height:450px}
+        .about-img-main-gamehub{position:absolute;width:70%;height:80%;top:0;left:0;border-radius:16px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.15);z-index:2}
+        .about-img-sub-gamehub{position:absolute;width:50%;height:50%;bottom:0;right:0;border-radius:16px;overflow:hidden;box-shadow:0 15px 40px rgba(0,0,0,.1);border:5px solid #fff;z-index:3}
+        .about-img-accent-gamehub{position:absolute;width:40%;height:40%;top:10%;right:5%;border-radius:16px;background:#8b5cf6;opacity:.1;z-index:1}
+        .about-img-main-gamehub img,.about-img-sub-gamehub img{width:100%;height:100%;object-fit:cover}
+        .about-text-gamehub h4{color:#8b5cf6;text-transform:uppercase;letter-spacing:3px;font-size:.9rem;margin-bottom:15px}
+        .about-text-gamehub h2{color:#0F172A;font-size:2.5rem;font-weight:700;margin-bottom:25px}
+        .about-text-gamehub p{color:#64748b;line-height:1.8;margin-bottom:20px}
+        .about-feature-item-gamehub{display:flex;align-items:flex-start;margin-bottom:20px}
+        .about-feature-icon-gamehub{width:50px;height:50px;min-width:50px;background:rgba(139,92,246,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-right:15px}
+        .about-feature-icon-gamehub i{color:#8b5cf6;font-size:1.2rem}
+        .about-feature-text-gamehub h5{color:#0F172A;font-size:1.1rem;margin-bottom:5px}
+        .about-feature-text-gamehub p{color:#94a3b8;font-size:.9rem;margin:0}
+
+        /* Services Grid — NO tabs, just clean cards */
+        .services-section-gamehub{background:#F5F7FA;padding:80px 0}
+        .service-card-gamehub{background:#fff;border-radius:20px;padding:40px 30px;text-align:center;transition:all .4s ease;border:1px solid #e2e8f0;height:100%;position:relative;overflow:hidden}
+        .service-card-gamehub:hover{transform:translateY(-10px);box-shadow:0 20px 50px rgba(0,0,0,.1);border-color:#8b5cf6}
+        .service-icon-gamehub{width:80px;height:80px;background:linear-gradient(135deg,rgba(139,92,246,.1) 0%,rgba(139,92,246,.2) 100%);border-radius:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 25px;transition:all .4s ease}
+        .service-card-gamehub:hover .service-icon-gamehub{background:#8b5cf6;transform:rotateY(180deg)}
+        .service-card-gamehub:hover .service-icon-gamehub i{color:#fff}
+        .service-icon-gamehub i{font-size:2rem;color:#8b5cf6;transition:all .4s ease}
+        .service-card-gamehub h3{color:#0F172A;font-size:1.3rem;margin-bottom:15px}
+        .service-card-gamehub p{color:#64748b;font-size:.95rem;line-height:1.6;margin:0 0 20px}
+        .service-btn-gamehub{display:inline-flex;align-items:center;padding:10px 25px;background:#8b5cf6;color:#fff;text-decoration:none;border-radius:50px;font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;transition:all .3s ease}
+        .service-btn-gamehub:hover{background:#0F172A;color:#fff;transform:translateY(-2px)}
+        .service-btn-gamehub i{margin-left:8px}
+
+        /* Featured — smaller, 4 items */
+        .featured-section-gamehub{background:#fff;padding:80px 0}
+        .featured-card-gamehub{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 5px 25px rgba(0,0,0,.08);transition:all .4s ease;margin:10px}
+        .featured-card-gamehub:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,.15)}
+        .featured-img-gamehub{height:200px;overflow:hidden}
+        .featured-img-gamehub img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+        .featured-card-gamehub:hover .featured-img-gamehub img{transform:scale(1.1)}
+        .featured-content-gamehub{padding:25px}
+        .featured-tag-gamehub{display:inline-block;padding:3px 12px;background:rgba(139,92,246,.1);color:#8b5cf6;font-size:.75rem;text-transform:uppercase;letter-spacing:1px;border-radius:20px;margin-bottom:10px}
+        .featured-content-gamehub h4{color:#0F172A;font-size:1.1rem;margin-bottom:10px}
+        .featured-content-gamehub p{color:#64748b;font-size:.9rem;line-height:1.5;margin-bottom:15px}
+        .featured-btn-gamehub{color:#8b5cf6;text-decoration:none;font-weight:600;font-size:.9rem;display:inline-flex;align-items:center;transition:all .3s ease}
+        .featured-btn-gamehub:hover{color:#0F172A}
+        .featured-btn-gamehub i{margin-left:8px;transition:transform .3s ease}
+        .featured-btn-gamehub:hover i{transform:translateX(5px)}
+
+        /* Gallery — smaller, 8 images max */
+        .gallery-section-gamehub{background:#0F172A;padding:80px 0}
+        .gamehub-gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+        .gamehub-gallery-item{position:relative;border-radius:12px;overflow:hidden;cursor:pointer;aspect-ratio:16/9;transition:all .4s ease}
+        .gamehub-gallery-item:nth-child(2n+1){aspect-ratio:4/3}
+        .gamehub-gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease,filter .4s ease}
+        .gamehub-gallery-item:hover{transform:translateY(-5px);box-shadow:0 15px 40px rgba(0,0,0,.3)}
+        .gamehub-gallery-item:hover img{transform:scale(1.1);filter:brightness(.7)}
+        .gamehub-gallery-overlay{position:absolute;bottom:0;left:0;right:0;padding:30px 20px 20px;background:linear-gradient(transparent,rgba(15,23,42,.95));transform:translateY(100%);transition:transform .4s ease}
+        .gamehub-gallery-item:hover .gamehub-gallery-overlay{transform:translateY(0)}
+        .gamehub-gallery-overlay h4{color:#fff;font-size:1rem;margin-bottom:5px}
+        .gamehub-gallery-overlay p{color:#94a3b8;font-size:.8rem;margin:0}
+        .gamehub-view-icon{position:absolute;top:15px;right:15px;width:40px;height:40px;background:#8b5cf6;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;transform:scale(0);transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+        .gamehub-gallery-item:hover .gamehub-view-icon{transform:scale(1)}
+
+        /* Why Choose Us — inline style fix */
+        .why-gamehub{background:linear-gradient(135deg,#F5F7FA 0%,#e2e8f0 100%) !important;padding:100px 0}
+        .why-card-gamehub{background:#fff !important;border-radius:20px;padding:40px 30px;text-align:center;transition:all .4s ease;border:1px solid #e2e8f0;height:100%}
+        .why-card-gamehub:hover{transform:translateY(-10px);box-shadow:0 20px 50px rgba(0,0,0,.1);border-color:#8b5cf6}
+        .why-icon-gamehub{width:80px;height:80px;background:linear-gradient(135deg,rgba(139,92,246,.1) 0%,rgba(139,92,246,.2) 100%);border-radius:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 25px;transition:all .4s ease}
+        .why-card-gamehub:hover .why-icon-gamehub{background:#8b5cf6;transform:rotateY(180deg)}
+        .why-card-gamehub:hover .why-icon-gamehub i{color:#fff}
+        .why-icon-gamehub i{font-size:2rem;color:#8b5cf6;transition:all .4s ease}
+        .why-card-gamehub h3{color:#0F172A;font-size:1.3rem;margin-bottom:15px}
+        .why-card-gamehub p{color:#64748b;font-size:.95rem;line-height:1.6;margin:0}
+
+        /* Testimonials — inline style fix */
+        .testimonials-section-gamehub{background:#fff !important;padding:100px 0}
+        .testimonial-card-gamehub{background:#F5F7FA !important;border-radius:20px;padding:40px;margin:15px;position:relative;transition:all .4s ease}
+        .testimonial-card-gamehub:hover{transform:translateY(-5px);box-shadow:0 15px 40px rgba(0,0,0,.1)}
+        .testimonial-quote-gamehub{font-size:3rem;color:#8b5cf6;opacity:.3;line-height:1;margin-bottom:15px}
+        .testimonial-text-gamehub{color:#475569;font-size:1rem;line-height:1.7;font-style:italic;margin-bottom:25px}
+        .testimonial-author-gamehub{display:flex;align-items:center}
+        .testimonial-avatar-gamehub{width:55px;height:55px;background:linear-gradient(135deg,#8b5cf6,#0A5FB4);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-right:15px}
+        .testimonial-avatar-gamehub i{color:#fff;font-size:1.3rem}
+        .testimonial-info-gamehub h5{color:#0F172A;font-size:1rem;margin-bottom:3px}
+        .testimonial-info-gamehub .stars{color:#fbbf24;font-size:.85rem}
+
+        /* CTA — inline style fix */
+        .cta-strip-gamehub{background:linear-gradient(135deg,#8b5cf6 0%,#a78bfa 100%) !important;padding:80px 20px;text-align:center;position:relative;overflow:hidden}
+        .cta-strip-gamehub::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></svg>');background-size:40px 40px}
+        .cta-strip-gamehub h2{color:#fff;font-size:clamp(1.8rem,4vw,3rem);font-weight:700;margin-bottom:15px;position:relative;z-index:1}
+        .cta-strip-gamehub p{color:rgba(255,255,255,.8);font-size:1.1rem;margin-bottom:35px;position:relative;z-index:1}
+        .cta-btns-gamehub .btn{padding:15px 40px;font-size:1rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;border-radius:50px;margin:8px;position:relative;z-index:1;transition:all .4s ease;text-decoration:none;display:inline-block}
+        .cta-btns-gamehub .btn-whatsapp-gamehub{background:#25D366;color:#fff;border:2px solid #25D366}
+        .cta-btns-gamehub .btn-whatsapp-gamehub:hover{background:transparent;color:#fff;transform:translateY(-3px);box-shadow:0 10px 30px rgba(37,211,102,.3)}
+        .cta-btns-gamehub .btn-phone-gamehub{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5)}
+        .cta-btns-gamehub .btn-phone-gamehub:hover{background:#fff;color:#8b5cf6;transform:translateY(-3px)}
+
+        @media(max-width:768px){
+            .stat-item-gamehub::after{display:none}
+            .about-image-collage-gamehub{height:350px;margin-bottom:40px}
+            .gamehub-gallery-item{aspect-ratio:16/9!important}
+        }
+    </style>
+</head>
+<body>
+<!-- Spinner -->
+<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+<!-- Topbar -->
+<div class="container-fluid px-5 d-none border-bottom d-lg-block" style="background-color: #0F172A;">
+    <div class="row gx-0 align-items-center">
+        <div class="col-lg-4 text-center text-lg-start mb-lg-0">
+            <div class="d-inline-flex align-items-center" style="height: 45px;">
+                <a href="about.html" class="text-white me-3"><small><i class="fas fa-info-circle me-1"></i> About</small></a>
+                <span class="text-white-50">|</span>
+                <a href="gallery.html" class="text-white mx-3"><small><i class="fas fa-images me-1"></i> Gallery</small></a>
+                <span class="text-white-50">|</span>
+                <a href="contact.html" class="text-white ms-3"><small><i class="fas fa-envelope me-1"></i> Contact</small></a>
+            </div>
+        </div>
+        <div class="col-lg-4 text-center d-flex align-items-center justify-content-center">
+            <small class="text-white-50 me-2"><i class="fas fa-phone-alt me-1"></i> Call Us:</small>
+            <a href="tel:+2347063785191" class="text-white fw-bold"><small>+234 706 378 5191</small></a>
+        </div>
+        <div class="col-lg-4 text-center text-lg-end">
+            <div class="d-inline-flex align-items-center" style="height: 45px;">
+                <a href="https://wa.me/2347063785191" target="_blank" class="text-white me-3"><small><i class="fab fa-whatsapp me-1"></i> WhatsApp</small></a>
+                <span class="text-white-50">|</span>
+                <a href="https://instagram.com" target="_blank" class="text-white mx-3"><small><i class="fab fa-instagram me-1"></i> Instagram</small></a>
+                <span class="text-white-50">|</span>
+                <a href="https://facebook.com" target="_blank" class="text-white ms-3"><small><i class="fab fa-facebook me-1"></i> Facebook</small></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid px-5 py-4 d-none d-lg-block" style="background-color: #FFFFFF;">
+    <div class="row gx-0 align-items-center text-center">
+        <div class="col-md-4 col-lg-3 text-center text-lg-start">
+            <div class="d-inline-flex align-items-center">
+                <a href="index.html" class="navbar-brand p-0">
+                    <h1 class="display-6 m-0" style="color: #0A5FB4;"><i class="fas fa-building me-2" style="color: #1D8A43;"></i>Toronto</h1>
+                    <small class="d-block text-muted" style="font-size: 0.75rem; letter-spacing: 2px; margin-top: -5px;">MULTIVENTURES CONCEPT</small>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4 col-lg-6 text-center">
+            <p class="text-muted mb-0" style="font-size: 0.95rem; letter-spacing: 1px;">
+                <em>One Company. Multiple Successful Businesses.</em>
+            </p>
+        </div>
+        <div class="col-md-4 col-lg-3 text-center text-lg-end">
+            <div class="d-inline-flex align-items-center">
+                <a href="https://wa.me/2347063785191" target="_blank" class="d-flex align-items-center justify-content-center" style="color: #25D366;">
+                    <span class="rounded-circle btn-md-square border" style="border-color: #25D366 !important;"><i class="fab fa-whatsapp"></i></span>
+                    <span class="text-dark ms-2 d-none d-xl-inline">Chat</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Navbar -->
+<div class="container-fluid nav-bar p-0">
+    <div class="row gx-0 px-5 align-items-center" style="background-color: #0A5FB4;">
+        <div class="col-12">
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0A5FB4;">
+                <a href="index.html" class="navbar-brand d-block d-lg-none">
+                    <h1 class="display-6 m-0 text-white"><i class="fas fa-building me-2" style="color: #1D8A43;"></i>Toronto</h1>
+                </a>
+                <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars fa-1x text-white"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto py-0">
+                        <a href="index.html" class="nav-item nav-link text-white">Home</a>
+                        <a href="about.html" class="nav-item nav-link text-white">About</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle active text-white fw-bold" data-bs-toggle="dropdown">Businesses</a>
+                            <div class="dropdown-menu rounded-0 m-0" style="background: #0F172A; border: none;">
+                                <a href="technology.html" class="dropdown-item text-white"><i class="fas fa-microchip me-2"></i> Technology</a>
+                                <a href="kitchen.html" class="dropdown-item text-white"><i class="fas fa-utensils me-2"></i> Kitchen</a>
+                                <a href="gamehub.html" class="dropdown-item text-white active" style="background: rgba(139,92,246,0.3);"><i class="fas fa-gamepad me-2"></i> GameHub</a>
+                                <a href="salon.html" class="dropdown-item text-white"><i class="fas fa-cut me-2"></i> Salon</a>
+                                <a href="fashion.html" class="dropdown-item text-white"><i class="fas fa-tshirt me-2"></i> Fashion</a>
+                            </div>
+                        </div>
+                        <a href="gallery.html" class="nav-item nav-link text-white">Gallery</a>
+                        <a href="contact.html" class="nav-item nav-link text-white me-2">Contact</a>
+                    </div>
+                    <a href="tel:+2347063785191" class="btn rounded-pill py-2 px-4 px-lg-3 mb-3 mb-md-3 mb-lg-0" style="background-color: #1D8A43; color: white; border: 0;"><i class="fab fa-whatsapp me-2"></i> +234 706 378 5191</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!-- Hero — Single Static Image -->
+<section class="gamehub-hero wow fadeIn" data-wow-delay="0.1s">
+    <div class="gamehub-hero-bg"></div>
+    <div class="gamehub-hero-overlay"></div>
+    <div class="gamehub-hero-content">
+        <span class="gamehub-hero-badge wow fadeInDown" data-wow-delay="0.3s"><i class="fas fa-gamepad me-2"></i>Gaming & Entertainment</span>
+        <h1 class="wow fadeInUp" data-wow-delay="0.4s">Toronto <span>GameHub</span></h1>
+        <p class="wow fadeInUp" data-wow-delay="0.5s">Level Up Your Experience. The ultimate gaming destination — consoles, accessories, and immersive entertainment.</p>
+        <div class="hero-btns wow fadeInUp" data-wow-delay="0.6s">
+            <a href="https://wa.me/2347063785191?text=Hi%20Toronto%20GameHub,%20I%20want%20to%20enquire%20about%20gaming%20consoles" target="_blank" class="btn btn-primary-gamehub"><i class="fab fa-whatsapp me-2"></i>Enquire Now</a>
+            <a href="#services" class="btn btn-outline-gamehub"><i class="fas fa-arrow-down me-2"></i>Explore Services</a>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Bar -->
+<section class="stats-bar-gamehub">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-6 col-md-3 stat-item-gamehub wow fadeInUp" data-wow-delay="0.1s">
+                <span class="stat-number-gamehub" data-count="100">0</span><span class="stat-number-gamehub">+</span>
+                <div class="stat-label-gamehub">Games Available</div>
+            </div>
+            <div class="col-6 col-md-3 stat-item-gamehub wow fadeInUp" data-wow-delay="0.2s">
+                <span class="stat-number-gamehub" data-count="500">0</span><span class="stat-number-gamehub">+</span>
+                <div class="stat-label-gamehub">Happy Gamers</div>
+            </div>
+            <div class="col-6 col-md-3 stat-item-gamehub wow fadeInUp" data-wow-delay="0.3s">
+                <span class="stat-number-gamehub" data-count="5">0</span><span class="stat-number-gamehub">★</span>
+                <div class="stat-label-gamehub">Star Rating</div>
+            </div>
+            <div class="col-6 col-md-3 stat-item-gamehub wow fadeInUp" data-wow-delay="0.4s">
+                <span class="stat-number-gamehub" data-count="24">0</span><span class="stat-number-gamehub">/7</span>
+                <div class="stat-label-gamehub">Open Hours</div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About Section -->
+<section class="about-gamehub">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                <div class="about-image-collage-gamehub">
+                    <div class="about-img-main-gamehub">
+                        <img src="gamehub.png" alt="Toronto GameHub Store">
+                    </div>
+                    <div class="about-img-sub-gamehub">
+                        <img src="gaming-consoles.jpg" alt="Gaming Setup">
+                    </div>
+                    <div class="about-img-accent-gamehub"></div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+                <div class="about-text-gamehub">
+                    <h4><i class="fas fa-gamepad me-2"></i>About Toronto GameHub</h4>
+                    <h2>Level Up Your Experience</h2>
+                    <p>Toronto GameHub is the ultimate gaming and entertainment destination under Toronto Multiventures Concept. We bring you the latest gaming consoles, accessories, and an immersive gaming environment that keeps you coming back for more.</p>
+                    <p>Whether you're a casual gamer or a hardcore enthusiast, we've got everything you need — from PlayStation and Xbox to gaming headsets, controllers, and more. Step in and level up.</p>
+                    <div class="about-features-gamehub">
+                        <div class="about-feature-item-gamehub">
+                            <div class="about-feature-icon-gamehub"><i class="fas fa-vr-cardboard"></i></div>
+                            <div class="about-feature-text-gamehub">
+                                <h5>Latest Consoles</h5>
+                                <p>PS5, Xbox Series X, Nintendo Switch — all in stock.</p>
+                            </div>
+                        </div>
+                        <div class="about-feature-item-gamehub">
+                            <div class="about-feature-icon-gamehub"><i class="fas fa-headset"></i></div>
+                            <div class="about-feature-text-gamehub">
+                                <h5>Gaming Accessories</h5>
+                                <p>Controllers, headsets, charging docks & more.</p>
+                            </div>
+                        </div>
+                        <div class="about-feature-item-gamehub">
+                            <div class="about-feature-icon-gamehub"><i class="fas fa-users"></i></div>
+                            <div class="about-feature-text-gamehub">
+                                <h5>Gaming Sessions</h5>
+                                <p>Book a slot and game with friends in our lounge.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Grid — NO tabs, just clean cards -->
+<section class="services-section-gamehub" id="services">
+    <div class="container">
+        <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+            <h4 style="color:#8b5cf6;text-transform:uppercase;letter-spacing:3px;font-size:.9rem;"><i class="fas fa-star me-2"></i>What We Offer</h4>
+            <h2 style="color:#0F172A;font-size:2.5rem;font-weight:700;">Our Services</h2>
+            <p class="text-muted" style="max-width:600px;margin:0 auto;">Everything a gamer needs under one roof. Click to enquire.</p>
+        </div>
+        <div class="row g-4">
+            
+            <!-- Service 1: Consoles -->
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-card-gamehub">
+                    <div class="service-icon-gamehub"><i class="fas fa-gamepad"></i></div>
+                    <h3>Gaming Consoles</h3>
+                    <p>PlayStation 5, Xbox Series X/S, Nintendo Switch — brand new and pre-owned options available with warranty.</p>
+                    <a href="https://wa.me/2347063785191?text=Hi%20Toronto%20GameHub,%20I'm%20interested%20in%20gaming%20consoles" target="_blank" class="service-btn-gamehub">Enquire <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Service 2: Accessories -->
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="service-card-gamehub">
+                    <div class="service-icon-gamehub"><i class="fas fa-headset"></i></div>
+                    <h3>Gaming Accessories</h3>
+                    <p>Wireless controllers, gaming headsets, charging stations, protective cases, and thumb grips.</p>
+                    <a href="https://wa.me/2347063785191?text=Hi%20Toronto%20GameHub,%20I'm%20interested%20in%20gaming%20accessories" target="_blank" class="service-btn-gamehub">Enquire <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Service 3: Games -->
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-card-gamehub">
+                    <div class="service-icon-gamehub"><i class="fas fa-compact-disc"></i></div>
+                    <h3>Game Titles</h3>
+                    <p>Latest releases, classics, and pre-owned games for PS, Xbox, and Switch at great prices.</p>
+                    <a href="https://wa.me/2347063785191?text=Hi%20Toronto%20GameHub,%20I'm%20interested%20in%20game%20titles" target="_blank" class="service-btn-gamehub">Enquire <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Service 4: Gaming Lounge -->
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-card-gamehub">
+                    <div class="service-icon-gamehub"><i class="fas fa-couch"></i></div>
+                    <h3>Gaming Lounge</h3>
+                    <p>Book a gaming session in our lounge. Play solo or with friends on big screens with surround sound.</p>
+                    <a href="https://wa.me/2347063785191?text=Hi%20Toronto%20GameHub,%20I%20want%20to%20book%20a%20gaming%20session" target="_blank" class="service-btn-gamehub">Book Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Service 5: Repairs -->
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="service-card-gamehub">
+                    <div class="service-icon-gamehub"><i class="fas fa-tools"></i></div>
+                    <h3>Console Repairs</h3>
+                    <p>Controller fixes, HDMI port repairs, overheating solutions, and general console maintenance.</p>
+                    <a href="https://wa.me/2347063785191?text=Hi%20Toronto%20GameHub,%20I%20need%20console%20repair%20services" target="_blank" class="service-btn-gamehub">Enquire <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Service 6: Trade-In -->
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-card-gamehub">
+                    <div class="service-icon-gamehub"><i class="fas fa-exchange-alt"></i></div>
+                    <h3>Trade-In & Swap</h3>
+                    <p>Trade your old console or games for credit towards new ones. Fair valuation, instant credit.</p>
+                    <a href="https://wa.me/2347063785191?text=Hi%20Toronto%20GameHub,%20I'm%20interested%20in%20trade-in" target="_blank" class="service-btn-gamehub">Enquire <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Section — 8 images only -->
+<section class="gallery-section-gamehub">
+    <div class="container">
+        <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+            <h4 style="color:#8b5cf6;text-transform:uppercase;letter-spacing:3px;font-size:.9rem;"><i class="fas fa-images me-2"></i>Gallery</h4>
+            <h2 style="color:#fff;font-size:2.5rem;font-weight:700;">Gaming Moments</h2>
+            <p style="color:#94a3b8;max-width:600px;margin:0 auto;">A glimpse into the GameHub experience.</p>
+        </div>
+        <div class="gamehub-gallery-grid" id="gamehubGallery">
+            
+            <div class="gamehub-gallery-item" data-pswp-src="uploads/gamehub/gallery-1.jpg" data-pswp-width="1200" data-pswp-height="800">
+                <img src="gamehub-gallery1.jpg" alt="Gaming Setup" loading="lazy">
+                <div class="gamehub-view-icon"><i class="fas fa-expand"></i></div>
+                <div class="gamehub-gallery-overlay">
+                    <h4>Gaming Setup</h4>
+                    <p>Immersive gaming environment</p>
+                </div>
+            </div>
+
+            <div class="gamehub-gallery-item" data-pswp-src="uploads/gamehub/gallery-2.jpg" data-pswp-width="1200" data-pswp-height="800">
+                <img src="gamehub-gallery2.jpg" alt="PS5 Display" loading="lazy">
+                <div class="gamehub-view-icon"><i class="fas fa-expand"></i></div>
+                <div class="gamehub-gallery-overlay">
+                    <h4>PS5 Display</h4>
+                    <p>Latest console in stock</p>
+                </div>
+            </div>
+
+            <div class="gamehub-gallery-item" data-pswp-src="uploads/gamehub/gallery-3.jpg" data-pswp-width="1200" data-pswp-height="800">
+                <img src="gamehub-gallery3.jpg" alt="Gaming Lounge" loading="lazy">
+                <div class="gamehub-view-icon"><i class="fas fa-expand"></i></div>
+                <div class="gamehub-gallery-overlay">
+                    <h4>Gaming Lounge</h4>
+                    <p>Play with friends</p>
+                </div>
+            </div>
+
+            <div class="gamehub-gallery-item" data-pswp-src="uploads/gamehub/gallery-4.jpg" data-pswp-width="1200" data-pswp-height="800">
+                <img src="gamehub-gallery4.jpg" alt="Accessories Wall" loading="lazy">
+                <div class="gamehub-view-icon"><i class="fas fa-expand"></i></div>
+                <div class="gamehub-gallery-overlay">
+                    <h4>Accessories</h4>
+                    <p>Controllers, headsets, more</p>
+                </div>
+            </div>
+
+            <div class="gamehub-gallery-item" data-pswp-src="uploads/gamehub/gallery-5.jpg" data-pswp-width="1200" data-pswp-height="800">
+                <img src="gamehub-gallery5.jpg" alt="Tournament" loading="lazy">
+                <div class="gamehub-view-icon"><i class="fas fa-expand"></i></div>
+                <div class="gamehub-gallery-overlay">
+                    <h4>Gaming Events</h4>
+                    <p>Tournaments and competitions</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="why-gamehub">
+    <div class="container">
+        <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+            <h4 style="color:#8b5cf6;text-transform:uppercase;letter-spacing:3px;font-size:.9rem;"><i class="fas fa-award me-2"></i>Why Us</h4>
+            <h2 style="color:#0F172A;font-size:2.5rem;font-weight:700;">Why Choose Toronto GameHub</h2>
+            <p class="text-muted" style="max-width:600px;margin:0 auto;">The gamer-friendly choice for all things gaming.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="why-card-gamehub">
+                    <div class="why-icon-gamehub"><i class="fas fa-certificate"></i></div>
+                    <h3>Original Products</h3>
+                    <p>Only genuine consoles and accessories with full warranty.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="why-card-gamehub">
+                    <div class="why-icon-gamehub"><i class="fas fa-hand-holding-usd"></i></div>
+                    <h3>Fair Pricing</h3>
+                    <p>Competitive prices on new, pre-owned, and trade-in deals.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="why-card-gamehub">
+                    <div class="why-icon-gamehub"><i class="fas fa-wrench"></i></div>
+                    <h3>Repair Experts</h3>
+                    <p>Quick and reliable console and controller repairs.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="why-card-gamehub">
+                    <div class="why-icon-gamehub"><i class="fas fa-users"></i></div>
+                    <h3>Gaming Community</h3>
+                    <p>Join events, tournaments, and meet fellow gamers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials-section-gamehub">
+    <div class="container">
+        <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+            <h4 style="color:#8b5cf6;text-transform:uppercase;letter-spacing:3px;font-size:.9rem;"><i class="fas fa-comments me-2"></i>Testimonials</h4>
+            <h2 style="color:#0F172A;font-size:2.5rem;font-weight:700;">What Gamers Say</h2>
+            <p class="text-muted" style="max-width:600px;margin:0 auto;">Real feedback from the gaming community.</p>
+        </div>
+        <div class="testimonial-carousel-gamehub owl-carousel wow fadeInUp" data-wow-delay="0.2s">
+            
+            <div class="testimonial-card-gamehub">
+                <div class="testimonial-quote-gamehub"><i class="fas fa-quote-left"></i></div>
+                <p class="testimonial-text-gamehub">Got my PS5 from Toronto GameHub at a great price. Genuine product, sealed box, and they even helped me set it up. Best gaming store in town!</p>
+                <div class="testimonial-author-gamehub">
+                    <div class="testimonial-avatar-gamehub"><i class="fas fa-user"></i></div>
+                    <div class="testimonial-info-gamehub">
+                        <h5>Tunde Adeleke</h5>
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card-gamehub">
+                <div class="testimonial-quote-gamehub"><i class="fas fa-quote-left"></i></div>
+                <p class="testimonial-text-gamehub">The gaming lounge is amazing! Booked a session with my friends and we had a blast. Big screens, comfy seats, and all the latest games. Highly recommend!</p>
+                <div class="testimonial-author-gamehub">
+                    <div class="testimonial-avatar-gamehub"><i class="fas fa-user"></i></div>
+                    <div class="testimonial-info-gamehub">
+                        <h5>Sarah Osei</h5>
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card-gamehub">
+                <div class="testimonial-quote-gamehub"><i class="fas fa-quote-left"></i></div>
+                <p class="testimonial-text-gamehub">My controller was faulty and they fixed it same day! Affordable repair service and very professional. Toronto GameHub is my go-to for everything gaming.</p>
+                <div class="testimonial-author-gamehub">
+                    <div class="testimonial-avatar-gamehub"><i class="fas fa-user"></i></div>
+                    <div class="testimonial-info-gamehub">
+                        <h5>Kevin Mensah</h5>
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CTA Strip -->
+<section class="cta-strip-gamehub wow fadeIn" data-wow-delay="0.1s">
+    <div class="container">
+        <h2 class="wow fadeInUp" data-wow-delay="0.2s">Ready to Game?</h2>
+        <p class="wow fadeInUp" data-wow-delay="0.3s">Get your console, accessories, or book a gaming session today.</p>
+        <div class="cta-btns-gamehub wow fadeInUp" data-wow-delay="0.4s">
+            <a href="https://wa.me/2347063785191?text=Hi%20Toronto%20GameHub,%20I'm%20ready%20to%20game!" target="_blank" class="btn btn-whatsapp-gamehub"><i class="fab fa-whatsapp me-2"></i>Chat on WhatsApp</a>
+            <a href="tel:+2347063785191" class="btn btn-phone-gamehub"><i class="fas fa-phone-alt me-2"></i>Call Us Now</a>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<div class="container-fluid py-5 wow fadeIn" data-wow-delay="0.2s" style="background-color: #0F172A;">
+    <div class="container py-5">
+        <div class="row g-4 rounded mb-5 p-4" style="background: rgba(255,255,255,0.03);">
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="rounded p-3 text-center">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width:60px;height:60px;background:rgba(139,92,246,0.2);">
+                        <i class="fas fa-envelope fa-2x" style="color:#8b5cf6;"></i>
+                    </div>
+                    <h5 class="text-white mb-2">Email Us</h5>
+                    <p class="text-white-50 mb-0" style="font-size:0.9rem;">
+                        <a href="mailto:Torontoenterprise1@gmail.com" class="text-white-50 text-decoration-none">Torontoenterprise1<br>@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="rounded p-3 text-center">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width:60px;height:60px;background:rgba(29,138,67,0.2);">
+                        <i class="fas fa-phone-alt fa-2x" style="color:#1D8A43;"></i>
+                    </div>
+                    <h5 class="text-white mb-2">Call Us</h5>
+                    <p class="text-white-50 mb-0" style="font-size:0.9rem;">
+                        <a href="tel:+2347063785191" class="text-white-50 text-decoration-none">+234 706 378 5191</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="rounded p-3 text-center">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width:60px;height:60px;background:rgba(139,92,246,0.2);">
+                        <i class="fab fa-whatsapp fa-2x" style="color:#25D366;"></i>
+                    </div>
+                    <h5 class="text-white mb-2">WhatsApp</h5>
+                    <p class="text-white-50 mb-0" style="font-size:0.9rem;">
+                        <a href="https://wa.me/2347063785191" target="_blank" class="text-white-50 text-decoration-none">+234 706 378 5191<br>Fast Response</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="rounded p-3 text-center">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width:60px;height:60px;background:rgba(29,138,67,0.2);">
+                        <i class="fas fa-clock fa-2x" style="color:#1D8A43;"></i>
+                    </div>
+                    <h5 class="text-white mb-2">Business Hours</h5>
+                    <p class="text-white-50 mb-0" style="font-size:0.9rem;">Mon - Sat: 8AM - 7PM<br>Sunday: 10AM - 5PM</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <a href="index.html" class="navbar-brand mb-3">
+                        <h3 class="m-0" style="color:#0A5FB4;"><i class="fas fa-building me-2" style="color:#1D8A43;"></i>Toronto</h3>
+                        <small class="d-block text-white-50" style="font-size:0.7rem;letter-spacing:1.5px;margin-top:-3px;">MULTIVENTURES CONCEPT</small>
+                    </a>
+                    <p class="text-white-50 mb-3" style="font-size:0.9rem;">One company. Multiple successful businesses. Toronto Multiventures Concept brings together Technology, Kitchen, GameHub, Salon, and Fashion under one trusted brand.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="mb-4" style="color:#8b5cf6;">Quick Links</h4>
+                    <a href="index.html" class="text-white-50 text-decoration-none mb-2"><i class="fas fa-angle-right me-2" style="color:#1D8A43;"></i> Home</a>
+                    <a href="about.html" class="text-white-50 text-decoration-none mb-2"><i class="fas fa-angle-right me-2" style="color:#1D8A43;"></i> About Us</a>
+                    <a href="gallery.html" class="text-white-50 text-decoration-none mb-2"><i class="fas fa-angle-right me-2" style="color:#1D8A43;"></i> Gallery</a>
+                    <a href="contact.html" class="text-white-50 text-decoration-none mb-0"><i class="fas fa-angle-right me-2" style="color:#1D8A43;"></i> Contact</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="mb-4" style="color:#8b5cf6;">Our Businesses</h4>
+                    <a href="technology.html" class="text-white-50 text-decoration-none mb-2"><i class="fas fa-angle-right me-2" style="color:#1D8A43;"></i> Toronto Technology</a>
+                    <a href="kitchen.html" class="text-white-50 text-decoration-none mb-2"><i class="fas fa-angle-right me-2" style="color:#1D8A43;"></i> Toronto Kitchen</a>
+                    <a href="gamehub.html" class="text-white-50 text-decoration-none mb-2"><i class="fas fa-angle-right me-2" style="color:#1D8A43;"></i> Toronto GameHub</a>
+                    <a href="salon.html" class="text-white-50 text-decoration-none mb-2"><i class="fas fa-angle-right me-2" style="color:#1D8A43;"></i> Toronto Unisex Classic Salon</a>
+                    <a href="fashion.html" class="text-white-50 text-decoration-none mb-0"><i class="fas fa-angle-right me-2" style="color:#1D8A43;"></i> Toronto Fashion</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="mb-4" style="color:#8b5cf6;">Connect With Us</h4>
+                    <p class="text-white-50 mb-3" style="font-size:0.9rem;">Follow us on social media for updates across all our businesses.</p>
+                    <div class="d-flex mb-4">
+                        <a href="https://instagram.com" target="_blank" class="btn btn-outline-light btn-sm rounded-circle me-2" style="width:40px;height:40px;border-color:rgba(255,255,255,0.2);"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com" target="_blank" class="btn btn-outline-light btn-sm rounded-circle me-2" style="width:40px;height:40px;border-color:rgba(255,255,255,0.2);"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/2347063785191" target="_blank" class="btn btn-sm rounded-circle me-2" style="width:40px;height:40px;background-color:#25D366;color:white;"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:Torontoenterprise1@gmail.com" class="btn btn-outline-light btn-sm rounded-circle" style="width:40px;height:40px;border-color:rgba(255,255,255,0.2);"><i class="fas fa-envelope"></i></a>
+                    </div>
+                    <h5 class="text-white mb-2" style="font-size:1rem;">Business Hours</h5>
+                    <p class="text-white-50 mb-1" style="font-size:0.85rem;"><i class="far fa-clock me-2" style="color:#1D8A43;"></i> Mon - Sat: 8AM - 7PM</p>
+                    <p class="text-white-50 mb-0" style="font-size:0.85rem;"><i class="far fa-clock me-2" style="color:#1D8A43;"></i> Sunday: 10AM - 5PM</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Copyright -->
+<div class="container-fluid py-4" style="background-color: #8b5cf6;">
+    <div class="container">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-6 text-center text-md-start mb-md-0">
+                <span class="text-white"><i class="fas fa-copyright text-light me-2"></i><span class="fw-bold">Toronto Multiventures Concept</span>. All Rights Reserved.</span>
+            </div>
+            <div class="col-md-6 text-center text-md-end text-white">
+                <span style="font-size:0.85rem;">One Company. Multiple Successful Businesses.</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg-square back-to-top" style="background-color:#8b5cf6;color:white;border:0;"><i class="fa fa-arrow-up"></i></a>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/2347063785191?text=Hi%20Toronto%20GameHub,%20I%20visited%20your%20website%20and%20I%20would%20like%20to%20enquire%20about..." target="_blank" class="btn btn-lg-square position-fixed rounded-circle d-flex align-items-center justify-content-center" style="background-color:#25D366;color:white;width:60px;height:60px;bottom:30px;right:30px;z-index:9999;box-shadow:0 4px 15px rgba(37,211,102,0.4);animation:pulse 2s infinite;">
+    <i class="fab fa-whatsapp fa-2x"></i>
+</a>
+
+<style>
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7)}70%{box-shadow:0 0 0 15px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+</style>
+
+<!-- Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="wow.min.js"></script>
+<script src="owl.carousel.min.js"></script>
+<script src="main.js"></script>
+
+<!-- PhotoSwipe + Custom Scripts -->
+<script type="module">
+    import PhotoSwipeLightbox from 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe-lightbox.esm.min.js';
+    import PhotoSwipe from 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe.esm.min.js';
+
+    const lightbox = new PhotoSwipeLightbox({
+        gallery: '#gamehubGallery',
+        children: '.gamehub-gallery-item',
+        pswpModule: PhotoSwipe,
+        padding: {top: 20, bottom: 20, left: 20, right: 20},
+        showHideAnimationType: 'zoom',
+        bgOpacity: 0.95,
+    });
+
+    lightbox.on('uiRegister', function() {
+        lightbox.pswp.ui.registerElement({
+            name: 'custom-caption',
+            order: 9,
+            isButton: false,
+            appendTo: 'root',
+            html: '',
+            onInit: (el, pswp) => {
+                lightbox.pswp.on('change', () => {
+                    const currSlide = lightbox.pswp.currSlide;
+                    const item = currSlide.data.element;
+                    if (item) {
+                        const caption = item.querySelector('h4')?.textContent || '';
+                        const desc = item.querySelector('p')?.textContent || '';
+                        el.innerHTML = `<div style="background:rgba(15,23,42,0.9);color:#fff;padding:15px 25px;border-radius:8px;position:absolute;bottom:30px;left:50%;transform:translateX(-50%);text-align:center;backdrop-filter:blur(10px);max-width:80%;"><h4 style="color:#8b5cf6;margin-bottom:5px;font-size:1.1rem;">${caption}</h4><p style="color:#cbd5e1;font-size:0.9rem;margin:0;">${desc}</p></div>`;
+                    }
+                });
+            }
+        });
+    });
+
+    lightbox.init();
+
+    // Animated Counters
+    const stats = document.querySelectorAll('.stat-number-gamehub[data-count]');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = parseInt(el.dataset.count);
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        el.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        el.textContent = Math.floor(current);
+                    }
+                }, 30);
+                observer.unobserve(el);
+            }
+        });
+    }, {threshold: 0.5});
+
+    stats.forEach(stat => observer.observe(stat));
+
+    // Carousels
+    $(document).ready(function(){
+        $('.featured-carousel-gamehub').owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: true,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            responsive: {
+                0: {items: 1},
+                768: {items: 2},
+                992: {items: 3}
+            }
+        });
+
+        $('.testimonial-carousel-gamehub').owlCarousel({
+            loop: true,
+            margin: 30,
+            nav: false,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 6000,
+            responsive: {
+                0: {items: 1},
+                768: {items: 2},
+                992: {items: 3}
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
